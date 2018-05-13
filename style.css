@@ -1,0 +1,212 @@
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background: #eee url('img/background.png');
+    background-size: 100%;
+    background-blend-mode: overlay;
+}
+
+header {
+    display: block;
+    width: 100vw;
+    height: 80px;
+}
+
+.logo {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+}
+
+.logo h1 {
+    height: 60px;
+    width: 220px;
+
+    margin: 0;
+    text-align: center;
+    line-height: 68px;
+    background: rgba(0,0,0,.9);
+    font-family: 'Nexa Bold';
+    font-size: 35px;
+    color: white;
+    display: inline-block; 
+    -box-shadow: 0 3px 12px rgba(0,0,0,.25);
+}
+
+.logo h2 {
+    position: absolute;
+    bottom: -23px;
+    height: 15px;
+    line-height: 15px;
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 10px;
+    color: #fff;
+    letter-spacing: 1px;
+    background: #D13232;;
+    padding: 0 10px;
+}
+
+header > nav {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    height: 60px;
+    -box-shadow: 0 3px 12px rgba(0,0,0,.25);
+}
+
+header > nav a {
+    display: inline-block;
+    height: 100%;
+    padding: 0 25px;
+    line-height: 60px;
+    text-decoration: none;
+    font-family: 'Nexa Bold';
+    font-size: 16px;
+    color: #000;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+header > nav a:hover {
+    background: rgba(100,100,100,.05);
+    -border-bottom: 5px solid rgba(209,50,50,.25);
+}
+
+header > nav a[selected] {
+    border-bottom: 5px solid #D13232;
+    opacity: 1;
+}
+
+.scrolldown {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    width: 100px;
+    margin-left: -50px;
+    font-family: Montserrat;
+    font-size: 14px;
+    color: #fff;
+}
+
+.content {
+    display: block;
+    width: 100%;
+}
+
+section {
+    width: 80%;
+    border-top: 5px solid #eee;
+    margin: 50px;
+    padding: 25px 5% 0 5%;
+}
+
+section h1 {
+    font-family: 'Nexa Bold';
+    font-size: 32px;
+    display: inline-block;
+    -border-bottom: 5px solid #D13232;
+    -background: #eee;
+    padding: 10px 0;
+}
+
+section a {
+    padding: 50px 0;
+    color: #D13232;
+    font-family: 'Nexa Bold';
+    text-decoration: none;
+}
+
+section img {
+    float: right;
+    margin: 20px;
+}
+
+.concert {
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 16px;
+    text-align: left;
+    background: #eee;
+    display: inline-block;
+    padding: 20px 50px;
+    margin: 10px 25px 25px 25px;
+}
+
+.concert .date {
+    color: #888;
+}
+
+.concert .location {
+    font-size: 25px;
+}
+
+.concert .ticket-btn {
+    background: #D13232;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    width: 120px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+footer {
+    width: 100%;
+    padding: 50px 0;
+    background: #111 url('img/_MG_1765 2.jpg');
+    background-size: 100%;
+    background-position: 0% 50%;
+    background-blend-mode: overlay;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 12px;
+}
+
+footer nav {
+    margin: 25px;
+    padding: 10px;  
+    text-align: center;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+footer nav a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Nexa Bold';
+    font-size: 16px;
+    padding: 10px 25px;
+}
+
+footer nav a:hover {
+    color: #D13232;
+}
+
+footer .social {
+    padding: 20px 0;
+    margin: 20px auto 0 auto;
+}
+
+footer .social a {
+    margin: 0 20px;
+}
+
+footer .social a img {
+    height: 42px;
+}
+
+footer .footer-content {
+    display: inline-block;
+    margin: 10px 25px;
+    color: #fff;
+}
+
+@media screen and (max-width: 800px) {
+    footer nav a {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+}

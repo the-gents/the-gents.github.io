@@ -1,0 +1,73 @@
+section .image {
+    position: relative;
+    width: 250px;
+    display: inline-block;
+}
+
+section .image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+section .image .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.7);
+    z-index: 1;
+    display: block;
+    text-align: center;
+
+    opacity: 0;
+    transform: scale(.9);
+    transition: opacity .2s, transform .2s;
+}
+
+section .image .overlay h1 {
+    color: rgba(255,255,255,.5);
+    font-size: 20px;
+    margin-top: 60px;
+    cursor: pointer;
+}
+
+section .image .overlay .download {
+    position: absolute; 
+    bottom: 0px; 
+    left: -12px;
+    width: 100%;
+    margin: 5px;
+    font-size: 12px;
+    padding: 2px;
+    color: #888;
+    cursor: pointer;
+}
+
+section .image .overlay:hover {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.view-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    text-align: center;
+    background: rgba(0,0,0,.8);
+}
+
+.view-image .img {
+    width: 90%;
+    height: 90%;
+    margin: 50px auto;
+    background: url('img/_MG_1399 2.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}

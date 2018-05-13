@@ -1,0 +1,37 @@
+.concert {
+    width: auto;
+    min-width: 500px;
+    max-width: 600px;
+    padding: 20px 80px 20px 50px;
+    margin: 20px 40px 20px 0px;
+    display: block; 
+}
+
+.concert div {
+    margin: 15px 0;
+}
+
+.concert .location {
+    padding: 20px 0;
+}
+
+.concert .location + a {
+    position: relative;
+    top: -3px;
+    left: 15px;
+}
+
+.concert .material-icons {
+    position: relative;
+    top: 7px;
+}
+
+.concert .description {
+    line-height: 25px;
+    color: rgba(0,0,0,.75);
+}
+
+.concert .ticket-btn[disabled] {
+    pointer-events: none;
+    opacity: .5;
+}

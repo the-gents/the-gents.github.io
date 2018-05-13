@@ -1,0 +1,344 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>The Gents</title>
+
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="author" content="">
+        <meta name="copyright" content="">
+        <meta name="robots" content="index,follow,noarchive" />
+        <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+        <link rel="manifest" href="favicon/site.webmanifest">
+        <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#d13232">
+        <meta name="msapplication-TileColor" content="#6bafed">
+        <meta name="theme-color" content="#D13232">
+
+        <link rel="stylesheet" href="common.css">
+        <link rel="stylesheet" href="sub.css">
+        <link rel="stylesheet" href="concerts.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <h1>The <span style="color: #D13232">Gents</span></h1>
+                <h2>Vocal ensemble</h2>
+            </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <span onmouseover="aboutMenu.show()" onmouseleave="aboutMenu.hide()">Over
+                    <ul class="about-menu" hidden>
+                        <li><a href="biography.html">Biografie</a></li>
+                        <li><a href="conductor.html">De dirigent</a></li>
+                    </ul>
+                </span>
+                <a href="concerts.html" selected>Concerten</a>
+                <a href="music.html">Muziek</a>
+                <a href="gallery.html">Galerij</a>
+                <button class="menu-btn" onclick="sideMenu.show()" hidden>
+                    <i class="material-icons">menu</i> <span>Menu</span>
+                </button>
+            </nav>
+
+            <script>
+                // Script for showing/hiding the 'about' menu
+                var aboutMenu = document.getElementsByClassName('about-menu')[0];
+                aboutMenu.show = function() {
+                    this.hidden = false;
+                    setTimeout(function() { aboutMenu.style.opacity = 1 }, 0);
+                }
+
+                aboutMenu.hide = function() {
+                    this.style.opacity = 0;
+                    setTimeout(function() { aboutMenu.hidden = true }, 200);
+                }
+            </script>
+
+            <a href="" class="language" data-msg="Switch to the english page"><img src="img/english.png"></a>
+        </header>
+
+        <div class="menu" hidden>
+            <i class="close material-icons" onclick="menu.hide()" style="cursor: pointer">close</i>
+            <h1>Menu</h1>
+            <nav>
+                <a href="" selected>Home</a>
+                <a href="">About</a>
+                <a href="">Concerts</a>
+                <a href="">Music</a>
+                <a href="">Gallery</a>
+            </nav>
+        </div>            
+
+        <script>
+            // Script for showing/hiding the menu for mobile devices
+            var menu = document.getElementsByClassName('menu')[0];
+            var header = document.getElementsByTagName('header')[0];
+
+            //onload = function() { menu.hidden = false; }
+
+            menu.show = function() {
+                setTimeout(function() { menu.style.transform = 'translateX(0px) scale(1)' }, 5);
+                setTimeout(function() { header.style.transform = 'translateX(250px)' });
+                setTimeout(function() { header.addEventListener('click', menu.hide) }, 300);
+            }
+
+            menu.hide = function() {
+                header.style.transform = 'translateX(0px)';
+                this.style.transform = 'translateX(-50px) scale(.9)';
+                header.removeEventListener('click', menu.hide);
+            }
+        </script>
+
+        <div class="content">
+            <section>
+                <h1>Concerten</h1>
+                <br>
+
+                <div class="concert">
+                    <div class="date">Zaterdag 26 mei 2018 <span>20:00</span></div>
+
+                    <span class="location">Burgwalkerk, Kampen</span>
+                    <a style="font-size: 12px" href="https://www.google.nl/maps/place/Burgwalkerk/@52.5566565,5.9134227,17z/data=!3m1!4b1!4m5!3m4!1s0x47c87882ec98e2ab:0x609b95a4ba960116!8m2!3d52.5566565!4d5.9156113">
+                        <i class="material-icons">location_on</i>
+                        Bekijk in Google Maps
+                    </a>
+
+                    <div class="description">
+                        The Gents in concert
+                        <br>
+                        <span style="font-size: 12px;">o.l.v. Annemiek van der Ven</span>
+                    </div>
+                    <a href="http://www.onlineticketsverkopen.nl/beheer/winkel/47" class="ticket-btn">Bestel kaarten</a>
+                </div>
+
+                <div class="concert">
+                    <div class="date">Vrijdag 1 juni 2018 <span>20:00</span></div>
+
+                    <span class="location">Pieterskerk, Utrecht</span>
+                    <a style="font-size: 12px" href="https://www.google.nl/maps/place/Pieterskerk/@52.0912908,5.1222538,17z/data=!3m1!4b1!4m5!3m4!1s0x47c66f4fe88d866f:0x273141fc3f646bf0!8m2!3d52.0912908!4d5.1244425">
+                        <i class="material-icons">location_on</i>
+                        Bekijk in Google Maps
+                    </a>
+
+                    <div class="description">
+                        For Mary
+                        <br>
+                        <span style="font-size: 12px;">o.l.v. Annemiek van der Ven</span>
+                    </div>
+                    <a href="http://www.pieterskerkconcerten.nl/" class="ticket-btn">Bestel kaarten</a>
+                </div>
+
+                <div class="concert">
+                    <div class="date">Zaterdag 30 juni 2018 <span>12:30</span></div>
+
+                    <span class="location">Bonaventurakerk, Woerden</span>
+                    <a style="font-size: 12px" href="">
+                        <i class="material-icons">location_on</i>
+                        Bekijk in Google Maps
+                    </a>
+
+                    <div class="description">
+                        Evensong, met organist Geerten Liefting
+                        <br>
+                        <span style="font-size: 12px;">o.l.v. Annemiek van der Ven</span>
+                    </div>
+                    <a disabled href="http://www.onlineticketsverkopen.nl/beheer/winkel/47" class="ticket-btn">Bestel kaarten</a>
+                </div>
+
+                <div class="concert">
+                    <div class="date">Zaterdag 1 september <span></span></div>
+
+                    <span class="location"></span>
+                    <!-- <a style="font-size: 12px" href="">
+                        <i class="material-icons">location_on</i>
+                        Bekijk in Google Maps
+                    </a> -->
+
+                    <div class="description">
+                        Meer informatie volgt.
+                        <br>
+                        <span style="font-size: 12px;">o.l.v. Annemiek van der Ven</span>
+                    </div>
+                    <a disabled href="http://www.onlineticketsverkopen.nl/beheer/winkel/47" class="ticket-btn">Bestel kaarten</a>
+                </div>
+
+                <div class="concert">
+                    <div class="date">Zondag 2 september 2018 <span></span></div>
+
+                    <span class="location">Roden</span>
+                    <a style="font-size: 12px" href="">
+                        <i class="material-icons">location_on</i>
+                        Bekijk in Google Maps
+                    </a>
+
+                    <div class="description">
+                        Meer informatie volgt.
+                        <br>
+                        <span style="font-size: 12px;">o.l.v. Annemiek van der Ven</span>
+                    </div>
+                    <a disabled href="http://www.onlineticketsverkopen.nl/beheer/winkel/47" class="ticket-btn">Bestel kaarten</a>
+                </div>
+
+                <div class="concert">
+                    <div class="date">Zondag 16 september 2018 <span>19:00</span></div>
+
+                    <span class="location">Bavokerk, Haarlem</span>
+                    <a style="font-size: 12px" href="">
+                        <i class="material-icons">location_on</i>
+                        Bekijk in Google Maps
+                    </a>
+
+                    <div class="description">
+                        Evensong
+                        <br>
+                        <span style="font-size: 12px;">o.l.v. Annemiek van der Ven</span>
+                    </div>
+                    <a disabled href="http://www.onlineticketsverkopen.nl/beheer/winkel/47" class="ticket-btn">Bestel kaarten</a>
+                </div>
+
+                <div class="concert">
+                    <div class="date">Zondag 4 november 2018 <span>14:15</span></div>
+
+                    <span class="location">Michaelkerk, Schalkwijk</span>
+                    <a style="font-size: 12px" href="">
+                        <i class="material-icons">location_on</i>
+                        Bekijk in Google Maps
+                    </a>
+
+                    <div class="description">
+                        
+                        <br>
+                        <span style="font-size: 12px;">o.l.v. Annemiek van der Ven</span>
+                    </div>
+                    <a disabled href="http://www.onlineticketsverkopen.nl/beheer/winkel/47" class="ticket-btn">Bestel kaarten</a>
+                </div>
+
+                <div class="concert">
+                    <div class="date">Zondag 11 november 2018 <span></span></div>
+
+                    <span class="location">Krijtbergkerk, Amsterdam</span>
+                    <a style="font-size: 12px" href="">
+                        <i class="material-icons">location_on</i>
+                        Bekijk in Google Maps
+                    </a>
+
+                    <div class="description">
+                        
+                        <br>
+                        <span style="font-size: 12px;">o.l.v. Annemiek van der Ven</span>
+                    </div>
+                    <a disabled href="http://www.onlineticketsverkopen.nl/beheer/winkel/47" class="ticket-btn">Bestel kaarten</a>
+                </div>
+
+                <div class="concert">
+                    <div class="date">Zondag 18 november 2018 <span></span></div>
+
+                    <span class="location"></span>
+                    <!-- <a style="font-size: 12px" href="">
+                        <i class="material-icons">location_on</i>
+                        Bekijk in Google Maps
+                    </a> -->
+
+                    <div class="description">
+                        CD-presentatieconcert
+                        <br>
+                        <span style="font-size: 12px;">o.l.v. Annemiek van der Ven</span>
+                    </div>
+                    <a disabled href="http://www.onlineticketsverkopen.nl/beheer/winkel/47" class="ticket-btn">Bestel kaarten</a>
+                </div>
+
+                <div class="concert">
+                    <div class="date">Zondag 25 november 2018 <span></span></div>
+
+                    <span class="location"></span>
+                    <!-- <a style="font-size: 12px" href="">
+                        <i class="material-icons">location_on</i>
+                        Bekijk in Google Maps
+                    </a> -->
+
+                    <div class="description">
+                        CD-presentatieconcert
+                        <br>
+                        <span style="font-size: 12px;">o.l.v. Annemiek van der Ven</span>
+                    </div>
+                    <a disabled href="http://www.onlineticketsverkopen.nl/beheer/winkel/47" class="ticket-btn">Bestel kaarten</a>
+                </div>
+
+                <div class="concert">
+                    <div class="date">Zondag 10 februari 2019 <span>15:00</span></div>
+
+                    <span class="location">Zalencentrum De Hoofdhof, Zwolle-Berkum</span>
+                    <br>
+                    <a style="font-size: 12px" href="">
+                        <i class="material-icons">location_on</i>
+                        Bekijk in Google Maps
+                    </a>
+
+                    <div class="description">
+                        CD-presentatieconcert
+                        <br>
+                        <span style="font-size: 12px;">o.l.v. Annemiek van der Ven</span>
+                    </div>
+                    <a disabled href="http://www.onlineticketsverkopen.nl/beheer/winkel/47" class="ticket-btn">Bestel kaarten</a>
+                </div>
+            </section>
+            <section></section>
+        </div>
+        <footer>
+            <nav>
+                <a href="index.html">Home</a>
+                <span onmouseover="aboutMenu.show()" onmouseleave="aboutMenu.hide()">About
+                    <ul class="about-menu" hidden>
+                        <li><a href="biography.html">Biography</a></li>
+                        <li><a href="conductor.html">The conductor</a></li>
+                    </ul>
+                </span>
+                <a href="concerts.html" selected>Concerts</a>
+                <a href="music.html">Music</a>
+                <a href="gallery.html">Gallery</a>
+                <button class="menu-btn" onclick="sideMenu.show()" hidden>
+                    <i class="material-icons">menu</i> <span>Menu</span>
+                </button>
+            </nav>
+
+            <br>
+
+            <div class="social">
+                <a href=""><img src="img/social/YouTube.svg"></a>
+                <a href=""><img src="img/social/Twitter.svg"></a>
+                <a href=""><img src="img/social/Facebook.svg"></a>
+            </div>
+
+            <br>
+
+            <div class="footer-content">
+                <p>Stichting The Gents</p>
+                <p>Asserpark 25</p>
+                <p>6706 HA</p>
+                <p>Wageningen</p>
+                <p>KVK: 12345678</p>
+            </div>
+            <div class="footer-content">
+                <p>Stichting The Gents</p>
+                <p>Asserpark 25</p>
+                <p>6706 HA</p>
+                <p>Wageningen</p>
+                <p>KVK: 12345678</p>
+            </div>
+            <div class="footer-content">
+                <p>Stichting The Gents</p>
+                <p>Asserpark 25</p>
+                <p>6706 HA</p>
+                <p>Wageningen</p>
+                <p>KVK: 12345678</p>
+            </div>
+        </footer>
+    </body>
+</html>

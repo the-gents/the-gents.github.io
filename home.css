@@ -1,0 +1,264 @@
+header {
+    position: relative;
+    background: url('img/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    user-select: none;
+}
+
+.logo {
+    position: absolute;
+    top: 80px;
+    left: 5vw;
+    width: 320px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.logo h1 {
+    height: 100px;
+    width: 320px;
+    margin: 0;
+    text-align: center;
+    line-height: 110px;
+    background: rgba(0,0,0,.9);
+    font-family: 'Nexa Bold';
+    font-size: 50px;
+    color: white;
+    display: inline-block; 
+    -box-shadow: 0 3px 12px rgba(0,0,0,.25);
+}
+
+.logo h2 {
+    position: absolute;
+    bottom: -50px;
+    left: 5px;
+    height: 30px;
+    line-height: 32px;
+    font-family: 'Nexa Bold';
+    font-weight: 600;
+    font-size: 16px;
+    color: rgba(255,255,255,.75);
+    letter-spacing: 1px;
+    background: rgba(0,0,0,.9);
+    padding: 0 20px;
+}
+
+.logo h2::before {
+    position: absolute;
+    left: -5px;
+    content: "";
+    height: 30px;
+    width: 5px;
+    background: #D13232;
+}
+
+
+@media screen and (max-width: 1100px) {
+    header > nav a {
+        display: none;
+    }
+
+    header > nav .menu-btn {
+        display: block !important;
+    }
+
+    header > nav a, header > nav > span {
+        display: none;
+    }
+
+    header > nav .menu-btn {
+        display: block !important;
+        color: #000;
+        width: 100px;
+    }
+
+    header > nav .menu-btn span {
+        font-family: 'Nexa Bold';
+        color: #000;
+        position: relative;
+        top: -8px;
+        left: 5px;
+        font-size: 14px;
+    }
+
+    header > nav {
+        background: transparent;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        border: none;
+    }
+
+    header .logo {
+        left: 50%;
+        margin-left: -160px;
+        margin-top: 30px;
+    } 
+}
+
+@media screen and (max-width: 800px) {
+    header {
+        background-position: 40% 50%;
+    }
+}
+
+@keyframes jump {
+    from { transform: translateY(0px); opacity: 0 }
+    to { transform: translateY(-20px); opacity: 1 }
+}
+
+.message {
+    position: absolute;
+    bottom: 5vh;
+    right: 7vw;
+    min-width: 200px;
+    padding: 7px 50px 7px 20px;
+    background: rgba(247,250,255,.9);
+    mix-blend-mode: difference;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 2;
+    box-shadow: 0 3px 6px rgba(0,0,0,.16);
+}
+
+.message h3 {
+    font-family: 'Nexa Bold';
+    font-size: 16px;
+    margin: 10px 0 5px 0;
+    color: #D13232;
+}
+
+.message p {
+    margin: 0;
+}
+
+.message a {
+    padding: 10px 0;
+    color: rgba(0,0,0,.5);
+    opacity: .8;
+    font-family: 'Nexa Bold';
+    font-size: 12px;
+    text-decoration: none;
+    display: block;
+}
+
+.message a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 800px) {
+    .message {
+        position: relative;
+        top: 0;
+        left: 0;
+        background: transparent;
+        mix-blend-mode: initial;
+        box-shadow: none;
+        width: 200px;
+        display: block;
+        margin: 20px auto 0 auto;
+        background: #eee;
+    }
+}
+
+.scrolldown {
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    width: 100px;
+    margin-left: -50px;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    opacity: 0;
+    mix-blend-mode: difference;
+    cursor: pointer;
+
+    animation-name: jump;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 2s;
+    -animation-delay: 2s;
+
+}
+
+.scrolldown .material-icons {
+    font-size: 60px;
+    position: relative;
+    top: 10px;
+    color: #D13232;
+}
+
+@media screen and (max-width: 1100px) {
+    section img {
+        width: 300px;
+        height: auto;
+    }
+}
+
+.concert {
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 16px;
+    text-align: left;
+
+    background: #ddd url('img/_MG_1571 2.jpg'); 
+    background-size: 200%;
+    background-position: 50% 60%;
+    background-blend-mode: screen;
+    display: inline-block;
+    padding: 20px 25px;
+    margin: 10px 25px 50px 25px;
+    width: 300px;
+}
+
+.concert .date {
+    color: #555;
+    margin: 10px 0;
+}
+
+.concert .date span {
+    color: #D13232;
+    margin-left: 5px;
+}
+
+.concert .date::before {
+    content: '';
+    position: relative;
+    top: 2px;
+    background :url('img/calendar.png');
+    background-size: 100%;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.concert .location {
+    font-size: 25px;
+}
+
+.concert .ticket-btn {
+    background: #D13232;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    width: 120px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.language {
+    left: 5vw;
+}

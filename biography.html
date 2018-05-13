@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>The Gents</title>
+
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="author" content="">
+        <meta name="copyright" content="">
+        <meta name="robots" content="index,follow,noarchive" />
+        <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+        <link rel="manifest" href="favicon/site.webmanifest">
+        <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#d13232">
+        <meta name="msapplication-TileColor" content="#6bafed">
+        <meta name="theme-color" content="#D13232">
+
+        <link rel="stylesheet" href="common.css">
+        <link rel="stylesheet" href="sub.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <h1>The <span style="color: #D13232">Gents</span></h1>
+                <h2>Vocal ensemble</h2>
+            </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <span onmouseover="aboutMenu.show()" onmouseleave="aboutMenu.hide()" selected>Over
+                    <ul class="about-menu" hidden>
+                        <li><a href="biography.html">Biografie</a></li>
+                        <li><a href="conductor.html">De dirigent</a></li>
+                    </ul>
+                </span>
+                <a href="concerts.html">Concerten</a>
+                <a href="music.html">Muziek</a>
+                <a href="gallery.html">Galerij</a>
+                <button class="menu-btn" onclick="sideMenu.show()" hidden>
+                    <i class="material-icons">menu</i> <span>Menu</span>
+                </button>
+            </nav>
+
+            <script>
+                // Script for showing/hiding the 'about' menu
+                var aboutMenu = document.getElementsByClassName('about-menu')[0];
+                aboutMenu.show = function() {
+                    this.hidden = false;
+                    setTimeout(function() { aboutMenu.style.opacity = 1 }, 0);
+                }
+
+                aboutMenu.hide = function() {
+                    this.style.opacity = 0;
+                    setTimeout(function() { aboutMenu.hidden = true }, 200);
+                }
+            </script>
+
+            <a href="" class="language" data-msg="Switch to the english page"><img src="img/english.png"></a>
+        </header>
+
+        <div class="menu" hidden>
+            <i class="close material-icons" onclick="menu.hide()" style="cursor: pointer">close</i>
+            <h1>Menu</h1>
+            <nav>
+                <a href="" selected>Home</a>
+                <a href="">About</a>
+                <a href="">Concerts</a>
+                <a href="">Music</a>
+                <a href="">Gallery</a>
+            </nav>
+        </div>            
+
+        <script>
+            // Script for showing/hiding the menu for mobile devices
+            var menu = document.getElementsByClassName('menu')[0];
+            var header = document.getElementsByTagName('header')[0];
+
+            //onload = function() { menu.hidden = false; }
+
+            menu.show = function() {
+                setTimeout(function() { menu.style.transform = 'translateX(0px) scale(1)' }, 5);
+                setTimeout(function() { header.style.transform = 'translateX(250px)' });
+                setTimeout(function() { header.addEventListener('click', menu.hide) }, 300);
+            }
+
+            menu.hide = function() {
+                header.style.transform = 'translateX(0px)';
+                this.style.transform = 'translateX(-50px) scale(.9)';
+                header.removeEventListener('click', menu.hide);
+            }
+        </script>
+
+        <div class="content">
+            <section>
+                <h1>Biografie</h1>
+                <img src="img/_MG_1678 2.jpg" width="500" style="float: right; margin-top: 200px;">
+                <div class="container" style="width: 600px;">
+                    <h1 style="font-size: 25px; margin: 0; font-style: italic; color: #D13232;">The Gents - A choir to watch</h1>
+                    <p><b>Vocaal ensemble The Gents</b> is een voor Nederland uniek gezelschap dat zich in korte tijd een vooraanstaande plaats heeft verworven binnen internationale muziekwereld. De groep jonge zangers wordt alom geroemd vanwege de bijzondere klank, de grote mate van flexibiliteit en de weergaloze interpretatie van het zeer uiteenlopende vocale repertoire.
+                        Of het nu gaat om religieuze muziek uit de Renaissance, Romantische Engelse muziek, arrangementen van eigentijdse jazz en popsongs of speciaal voor het ensemble gecomponeerd werk, de concerten van The Gents zijn steevast een buitengewone belevenis. De optredens kunnen dan ook rekenen op een enthousiast publiek en lovende kritieken in de pers:
+                    </p>
+                    <i>American Records Guide: “Their intonation, perfect unisono, sensitive handeling of texts makes this an ensemble to follow. Chanticleer has some real competition here”
+                        International Record Review: “The Gents produce a highly polished, rich and smooth sound, with impeccable intonation, articulation and ensemble”
+                        </i>
+                    <p>De basis voor de kwaliteit en de professionaliteit van The Gents werd gelegd binnen het Roder Jongenskoor. Dirigent Peter Dijkstra bracht de groep in 1999 bij elkaar en was artistiek leider en dirigent tot 2007. Sindsdien is hij nog betrokken als vaste gastdirigent. Na het vertrek van Peter Dijkstra was Maria van Nieukerken anderhalf jaar artistiek leider van The Gents. Vanaf medio 2008 tot medio 2014 stonden The Gents onder leiding van Béni Csillag, waarna Krista Audere gedurende twee jaar de baton overnam.  Vanaf 2018 staan The Gents onder leiding van Annemiek van der Ven.
+                        Ook internationaal worden de unieke kwaliteiten van The Gents gewaardeerd: Zo traden The Gents op in: Japan, Canada, Duitsland, Zweden, België, Engeland en Spanje. In april 2005 waren The Gents op uitnodiging van het ministerie van Buitenlandse zaken in Japan, waar zij de Nederlandse dag op de wereldtentoonstelling opluisterden. Prins Willem Alexander en prinses Maxima bevonden zich in het enthousiaste gehoor. Vanwege het overweldigende succes gingen The Gents in 2006 opnieuw op tournee in Japan. In 2011 waren zij te beluisteren in diverse concerten in het kader van het internationale korenfestival ‘La Fabbrica del Canto’ bij Milaan. In november 2012 namen The Gents met veel succes deel aan het aan het internationale festival Polyfollia in Normandië. Kerst 2013 luisterden The Gents op met een serie van acht concerten – Noel d’ Europe – in samenwerking met de organisten Euwe en Sybolt de Jong. In de eerste maanden van 2014 oogstte het programma ‘Heaven’ onder leiding van vaste gastdirigent Peter Dijkstra veel bewondering.
+                        Gedurende de afgelopen twee jaar zorgdede combinatie van de jonge Letse dirigente Krista Audere en de heren van The Gents voor muzikaal vuurwerk.
+                        Bij Channel Classics zijn inmiddels zes CD’s van The Gents verschenen. In november 2009 kwam ‘Sehnsucht’ met Duits Romantisch repertoire uit. In november 2011 namen The Gents een CD op met werken van George Gershwin in samenwerking met sopraan Johannette Zomer en het Haags Saxofoonkwartet. 
+                        </p>
+                </div>
+                <div style="clear: both"></div>
+            </section>
+            <section></section>
+        </div>
+        <footer>
+            <nav>
+                <a href="" selected>Home</a>
+                <a onclick="document.querySelector('.about-menu').hidden = false;">About</a>
+                <a href="">Concerts</a>
+                <a href="">Music</a>
+                <a href="">Gallery</a>
+                <ul class="about-menu" hidden>
+                    <li>Biography</li>
+                    <li>The conductor</li>
+                </ul>
+            </nav>
+
+            <br>
+
+            <div class="social">
+                <a href=""><img src="img/social/YouTube.svg"></a>
+                <a href=""><img src="img/social/Twitter.svg"></a>
+                <a href=""><img src="img/social/Facebook.svg"></a>
+            </div>
+
+            <br>
+
+            <div class="footer-content">
+                <p>Stichting The Gents</p>
+                <p>Asserpark 25</p>
+                <p>6706 HA</p>
+                <p>Wageningen</p>
+                <p>KVK: 12345678</p>
+            </div>
+            <div class="footer-content">
+                <p>Stichting The Gents</p>
+                <p>Asserpark 25</p>
+                <p>6706 HA</p>
+                <p>Wageningen</p>
+                <p>KVK: 12345678</p>
+            </div>
+            <div class="footer-content">
+                <p>Stichting The Gents</p>
+                <p>Asserpark 25</p>
+                <p>6706 HA</p>
+                <p>Wageningen</p>
+                <p>KVK: 12345678</p>
+            </div>
+        </footer>
+    </body>
+</html>

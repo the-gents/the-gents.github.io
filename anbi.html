@@ -1,0 +1,239 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>The Gents</title>
+
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="author" content="">
+        <meta name="copyright" content="">
+        <meta name="robots" content="index,follow,noarchive" />
+        <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+        <link rel="manifest" href="favicon/site.webmanifest">
+        <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#d13232">
+        <meta name="msapplication-TileColor" content="#6bafed">
+        <meta name="theme-color" content="#D13232">
+
+        <link rel="stylesheet" href="common.css">
+        <link rel="stylesheet" href="sub.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <style>
+            h3 {
+                margin-top: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <h1>The <span style="color: #D13232">Gents</span></h1>
+                <h2>Vocal ensemble</h2>
+            </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <span onmouseover="aboutMenu.show()" onmouseleave="aboutMenu.hide()" selected>Over
+                    <ul class="about-menu" hidden>
+                        <li><a href="biography.html">Biografie</a></li>
+                        <li><a href="conductor.html">De dirigent</a></li>
+                    </ul>
+                </span>
+                <a href="concerts.html">Concerten</a>
+                <a href="music.html">Muziek</a>
+                <a href="gallery.html">Galerij</a>
+                <button class="menu-btn" onclick="sideMenu.show()" hidden>
+                    <i class="material-icons">menu</i> <span>Menu</span>
+                </button>
+            </nav>
+
+            <script>
+                // Script for showing/hiding the 'about' menu
+                var aboutMenu = document.getElementsByClassName('about-menu')[0];
+                aboutMenu.show = function() {
+                    this.hidden = false;
+                    setTimeout(function() { aboutMenu.style.opacity = 1 }, 0);
+                }
+
+                aboutMenu.hide = function() {
+                    this.style.opacity = 0;
+                    setTimeout(function() { aboutMenu.hidden = true }, 200);
+                }
+            </script>
+
+            <a href="" class="language" data-msg="Switch to the english page"><img src="img/english.png"></a>
+        </header>
+
+        <div class="menu" hidden>
+            <i class="close material-icons" onclick="menu.hide()" style="cursor: pointer">close</i>
+            <h1>Menu</h1>
+            <nav>
+                <a href="" selected>Home</a>
+                <a href="">About</a>
+                <a href="">Concerts</a>
+                <a href="">Music</a>
+                <a href="">Gallery</a>
+            </nav>
+        </div>            
+
+        <script>
+            // Script for showing/hiding the menu for mobile devices
+            var menu = document.getElementsByClassName('menu')[0];
+            var header = document.getElementsByTagName('header')[0];
+
+            //onload = function() { menu.hidden = false; }
+
+            menu.show = function() {
+                setTimeout(function() { menu.style.transform = 'translateX(0px) scale(1)' }, 5);
+                setTimeout(function() { header.style.transform = 'translateX(250px)' });
+                setTimeout(function() { header.addEventListener('click', menu.hide) }, 300);
+            }
+
+            menu.hide = function() {
+                header.style.transform = 'translateX(0px)';
+                this.style.transform = 'translateX(-50px) scale(.9)';
+                header.removeEventListener('click', menu.hide);
+            }
+        </script>
+
+        <div class="content">
+            <section>
+                <h1>ANBI-status</h1>
+                <div class="container" style="max-width: 500px;">
+                    <h1 style="font-size: 25px; margin: 0; font-style: italic; color: #D13232;">Stichting The Gents 
+                        <span style="font-size: 16px; font-style: normal; opacity: .75; margin-left: 20px;">(dd. 18-01-2017)</span>
+                    </h1>
+                    <p>Het RSIN/fiscaal nummer: <code style="background: #eee; padding: 5px;">808926743</code></p>
+                    <br>
+                    <b>Contactgegevens</b>
+                    <p>Dhr. H. Donkers (penningmeester)</p>
+                    <b>Correspondentieadres</b>
+                    <p>Asserpark 25</p>
+                    <p>6706 HA Wageningen</p>
+                    <br>
+
+                    <h3>De doelstelling</h3>
+                    <p>De stichting The Gents heeft tot doel het in standhouden dan wel doen houden van het Vocaal Mannenensemble “The Gents", en wil dit ensemble op zo hoog mogelijk niveau laten musiceren met programma’s van hoge kwaliteit, zodat het naast andere Nederlanse top-ensembles een ijkpunt vormt voor de vocale muziekbeoefening in Nederland en de bloei daarvan bevordert. Het ensemble moet kansen bieden aan talentvolle zangers, en door airplay en exposure de populariteit van vocale muziek vergroten. 
+                    </p>
+
+                    <h3>Het beleidsplan</h3>
+                    <i>Zie beleidsnotitie, onder.</i>
+
+                    <h3>Bestuur</h3>
+                    <p>Geert Meijering – voorzitter</p>
+                    <p>Kor Brouwer – secretaris</p>
+                    <p>Hans Donkers – penningmeester</p>
+                    <p>Jeroen Vreugdenhil – PR en concerten</p>
+
+                    <h3>Het beloningsbeleid</h3>
+                    <p>De zangers van The Gents ontvangen geen enkele vergoeding; zij betalen contributie en nemen hun eigen reiskosten voor hun rekening. Onze dirigente ontvangt een honorarium volgens de richtlijnen die door Kunstfactor en KCZB zijn opgesteld. Het bestuur is onbezoldigd, maar kan gebruik maken van een extern management dat werkt op provisiebasis.
+                    </p>
+
+                    <h3>Verslag van de uitgeoefende activiteiten</h3>
+                    <p>De kaalslag in de culturele sector is ook aan The Gents niet ongemerkt voorbij gegaan. We merken dat het aantal mogelijkheden voor concerten op interessante podia afneemt, en we kregen te maken met afzeggingen van concerten om financiële redenen. 2016 was het eerste jaar dat we op zuivere amateurbasis werkten: we moesten afscheid nemen van onze zakelijk leider en het externe bestuur. Terwijl de zangers voorheen konden rekenen op reiskostenvergoeding, ging iedereen contributie betalen en waren de reiskosten voortaan voor eigen rekening. Er is een nieuw bestuur geformeerd vanuit de zangers. Er werd geen beroep gedaan op fondsen, de onkosten zijn volledig betaald uit de opbrengsten van concerten en door de contributies van de zangers. Hoewel de concerten in aantal tegenvielen, waren ze qua publieke belangstelling en waardering steeds een groot succes. In 2016 hebben The Gents concerten gegeven in Zuidbroek, Amsterdam, Kampen, Sliedrecht, Zwolle en Tilburg, met 2 programma’s:­­­­­ “The Long Day Closes”, met deels renaissance en vroeg-barok repertoire, en deels spirituals en lichte muziek, en “A Spotless Rose – Marialiederen uit alle eeuwen en landen”, dat wij in de advent-periode hebben gebracht. In 2017 waren er concerten in het Orgelpark in Amsterdam, de Edesche Concertzaal, De Lawei in Drachten (samen met Brassband De Waldsang), de Bovenkerk in Kampen (samen met het Kampen Boys Choir) en waren The Gents te horen op de Internationale Koorbiënnale te Haarlem en in een Evensong in Utrecht. De samenwerkingsprojecten waren deels voor eigen risico. Daarnaast organiseerden The Gents in september in Wageningen een afscheidsconcert voor Krista Audere die vertrok als artistiek leider. De kerstconcerten werden geleid door Arnaud van Gelder, zelf oud-zanger van The Gents. In januari 2018 zijn de repetities begonnen onder leiding van de nieuwe artistiek leider, Annemiek van der Ven. Onder haar leiding worden in 2018 diverse concerten gegeven, een concertreis naar het Verenigd Koninkrijk, waar The Gents in Lincoln een week lang de evensongs verzorgen, en wordt een nieuwe cd opgenomen.
+                    </p>
+                </div>
+
+                <div class="beleidsnotitie" style="background: #eee; padding: 25px; margin-top: 50px; max-width: 600px;">
+                    <h1 style="margin: 20px 0 0 0;">Beleidsnotitie The Gents</h1>
+                    <br><br>
+                    <i style="color: #D13232;">Februari 2017</i>
+
+                    <h3>Ambitie</h3>
+                    <p>De stichting The Gents heeft tot doel het in standhouden dan wel doen houden van het Vocaal Mannenensemble “The Gents”. Deze ( statutaire) doelstelling wordt nagestreefd door op hoog niveau te musiceren om daarmede programma’s van  hoge kwaliteit te kunnen aanbieden, die in voldoende mate door podia geprogrammeerd worden. Binnen drie jaar:
+                    </p>
+                    <ul>
+                        <li>Zijn The Gents een solide vocaal ensemble dat functioneert als een voertuig voor goede zangers en de dirigent(e) om op de betere en grotere nationale podia te musiceren. Aangevuld met één buitenlandse tournee per twee jaar. Ook wordt met enige regelmaat op kleinere podia en tijdens speciale evenementen gemusiceerd , om voldoende financiële middelen te generen en de continuïteit te waarborgen.</li>
+                        <li>Zingen The Gents maximaal 20 concerten per jaar.</li>
+                        <li>Krijgen voldoende jonge zangers de kans zich te ontwikkelen binnen het ensemble, onder de voorwaarde dat zij over voldoende muzikale vaardigheden beschikken.</li>
+                        <li>Wordt – indien dit bijdraagt aan bovenstaande – met enige regelmaat samengewerkt met gastdirigenten.</li>
+                    </ul>
+                    <p>Om dit te bereiken zijn in ieder geval de volgende vijf aspecten van belang:</p>
+
+                    <b>1: Een energieke dirigent(e), die zich volledig inzet voor de doelstellingen van The Gents en daar aan met elan en creativiteit op een inspirerende wijze vorm geeft.</b>
+                    <p style="opacity: .6; font-style: italic;">Dit betekent:</p>
+                    <p>Een grote betrokkenheid van de dirigent(e) bij The Gents . Voor die betrokkenheid is het van groot belang dat zij ook leiding geeft aan het bepalen van de artistieke lijn en daar haar stempel op drukt.</p>
+
+                    <b>2: Motivatie en betrokkenheid van de zangers door met elkaar op hoog niveau te musiceren in een vriendschappelijke sfeer.</b>
+                    <p style="opacity: .6; font-style: italic;">Dit betekent:</p>
+                    <ul>
+                        <li>De zangers zijn zich er van bewust dat het realiseren van de doelstellingen voor een belangrijk deel afhankelijk is van hun enthousiasme en inzet.</li>
+                        <li>Een ieder moet zich afvragen of de werk- en privé situatie het hen mogelijk maakt een dergelijke positieve bijdrage te leveren.</li>
+                    </ul>
+
+                    <b>3: Handhaving van een hoge zangkwaliteit.</b>
+                    <p style="opacity: .6; font-style: italic;">Dit betekent:</p>
+                    <ul>
+                        <li>De ambities en de zangkwaliteit van iedere individuele zanger dienen te passen bij de doelstellingen  en ambities van  The Gents. </li>
+                        <li>Iedere zanger committeert zich volledig aan The Gents en levert  duurzaam een serieuze bijdrage aan de muzikale prestaties van The Gents.</li>
+                        <li>Om de kwaliteit en de continuïteit te waarborgen kan  de dirigent(e)  functioneringsgesprekken voeren met de zangers. Tevens zal  de dirigent(e) aangeven of zij versterking van het koor met nieuwe leden nodig vindt of dat afscheid moet worden genomen van zangers.</li>
+                    </ul>
+
+                    <b>4: Een programmering waarin de aspecten die The Gents bijzonder maken zo goed mogelijk tot hun recht te komen.</b>
+                    <p>Deze aspecten zijn in hoofdzaak: klankkleur van het koor, hecht muzikaal collectief, muziek uit verschillende stijlperiodes kunnen combineren in één programma.</p>
+                    <p style="opacity: .6; font-style: italic;">Dit betekent:</p>
+                    <p></p>
+                    <ul>
+                        <li>Zoek in programmering naar contrasten en verbindingen. Dit geeft een programma kleur, logica en verhaal.</li>
+                        <li>Doe waarin je goed bent, maar doe het elke keer op een andere manier, in een andere context. De kwaliteit van The Gents komen vooral tot hun recht in: Oude muziek, 20/21ste-eeuwse composities en pop-arrangementen (uit het hoofd).</li>
+                        <li>Samenwerking met instrumentalisten opzoeken, als deze ook dienstbaar aan The Gents kunnen zijn.</li>
+                    </ul>
+
+                    <b>5: Een duidelijke artistieke leiding</b>
+                    <p style="opacity: .6; font-style: italic;">Dit betekent:</p>
+                    <p>De artistieke lijn van The Gents en de keuzes in programmering worden bepaald door de dirigent(e) in afstemming met de manager, een bestuurslid en eventueel enkele zangers.  Ruim voor de aanvang van ieder seizoen zal door de artistieke commissie, ook uit ‘commercieel’ oogpunt, een aantal attractieve programma’s worden opgesteld.  </p>
+                </div>
+            </section>
+            <section></section>
+        </div>
+        <footer>
+            <nav>
+                <a href="" selected>Home</a>
+                <a onclick="document.querySelector('.about-menu').hidden = false;">About</a>
+                <a href="">Concerts</a>
+                <a href="">Music</a>
+                <a href="">Gallery</a>
+                <ul class="about-menu" hidden>
+                    <li>Biography</li>
+                    <li>The conductor</li>
+                </ul>
+            </nav>
+
+            <br>
+
+            <div class="social">
+                <a href=""><img src="img/social/YouTube.svg"></a>
+                <a href=""><img src="img/social/Twitter.svg"></a>
+                <a href=""><img src="img/social/Facebook.svg"></a>
+            </div>
+
+            <br>
+
+            <div class="footer-content">
+                <p>Stichting The Gents</p>
+                <p>Asserpark 25</p>
+                <p>6706 HA</p>
+                <p>Wageningen</p>
+                <p>KVK: 12345678</p>
+            </div>
+            <div class="footer-content">
+                <p>Stichting The Gents</p>
+                <p>Asserpark 25</p>
+                <p>6706 HA</p>
+                <p>Wageningen</p>
+                <p>KVK: 12345678</p>
+            </div>
+            <div class="footer-content">
+                <p>Stichting The Gents</p>
+                <p>Asserpark 25</p>
+                <p>6706 HA</p>
+                <p>Wageningen</p>
+                <p>KVK: 12345678</p>
+            </div>
+        </footer>
+    </body>
+</html>

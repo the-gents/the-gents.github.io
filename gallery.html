@@ -1,0 +1,303 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>The Gents</title>
+
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="author" content="">
+        <meta name="copyright" content="">
+        <meta name="robots" content="index,follow,noarchive" />
+        <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+        <link rel="manifest" href="favicon/site.webmanifest">
+        <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#d13232">
+        <meta name="msapplication-TileColor" content="#6bafed">
+        <meta name="theme-color" content="#D13232">
+
+        <link rel="stylesheet" href="common.css">
+        <link rel="stylesheet" href="sub.css">
+        <link rel="stylesheet" href="gallery.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <h1>The <span style="color: #D13232">Gents</span></h1>
+                <h2>Vocal ensemble</h2>
+            </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <span onmouseover="aboutMenu.show()" onmouseleave="aboutMenu.hide()">Over
+                    <ul class="about-menu" hidden>
+                        <li><a href="biography.html">Biografie</a></li>
+                        <li><a href="conductor.html">De dirigent</a></li>
+                    </ul>
+                </span>
+                <a href="concerts.html">Concerten</a>
+                <a href="music.html">Muziek</a>
+                <a href="gallery.html" selected>Galerij</a>
+                <button class="menu-btn" onclick="sideMenu.show()" hidden>
+                    <i class="material-icons">menu</i> <span>Menu</span>
+                </button>
+            </nav>
+
+            <script>
+                // Script for showing/hiding the 'about' menu
+                var aboutMenu = document.getElementsByClassName('about-menu')[0];
+                aboutMenu.show = function() {
+                    this.hidden = false;
+                    setTimeout(function() { aboutMenu.style.opacity = 1 }, 0);
+                }
+
+                aboutMenu.hide = function() {
+                    this.style.opacity = 0;
+                    setTimeout(function() { aboutMenu.hidden = true }, 200);
+                }
+            </script>
+
+            <a href="" class="language" data-msg="Switch to the english page"><img src="img/english.png"></a>
+        </header>
+
+        <div class="menu" hidden>
+            <i class="close material-icons" onclick="menu.hide()" style="cursor: pointer">close</i>
+            <h1>Menu</h1>
+            <nav>
+                <a href="" selected>Home</a>
+                <a href="">About</a>
+                <a href="">Concerts</a>
+                <a href="">Music</a>
+                <a href="">Gallery</a>
+            </nav>
+        </div>            
+
+        <script>
+            // Script for showing/hiding the menu for mobile devices
+            var menu = document.getElementsByClassName('menu')[0];
+            var header = document.getElementsByTagName('header')[0];
+
+            //onload = function() { menu.hidden = false; }
+
+            menu.show = function() {
+                setTimeout(function() { menu.style.transform = 'translateX(0px) scale(1)' }, 5);
+                setTimeout(function() { header.style.transform = 'translateX(250px)' });
+                setTimeout(function() { header.addEventListener('click', menu.hide) }, 300);
+            }
+
+            menu.hide = function() {
+                header.style.transform = 'translateX(0px)';
+                this.style.transform = 'translateX(-50px) scale(.9)';
+                header.removeEventListener('click', menu.hide);
+            }
+        </script>
+
+        <div class="content">
+            <section>
+                <h1>Gallery</h1>
+                <br><br>
+                <div class="image">
+                    <img src="img/_MG_1399 2.jpg">
+                    <div class="overlay" onclick="imgEl.show('img/_MG_1399 2.jpg')">
+                        <h1>Klik om te bekijken</h1>
+                        <a href="" class="download">
+                            <i class="material-icons" style="position: relative; top: 8px;">file_download</i> 
+                            download high-res
+                        </a>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="img/_MG_1407 3.jpg">
+                    <div class="overlay" onclick="imgEl.show(url)">
+                        <h1>Klik om te bekijken</h1>
+                        <a href="" class="download">
+                            <i class="material-icons" style="position: relative; top: 8px;">file_download</i> 
+                            download high-res
+                        </a>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="img/_MG_1442 2.jpg">
+                    <div class="overlay" onclick="imgEl.show(url)">
+                        <h1>Klik om te bekijken</h1>
+                        <a href="" class="download">
+                            <i class="material-icons" style="position: relative; top: 8px;">file_download</i> 
+                            download high-res
+                        </a>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="img/_MG_1465 2.jpg">
+                    <div class="overlay" onclick="imgEl.show(url)">
+                        <h1>Klik om te bekijken</h1>
+                        <a href="" class="download">
+                            <i class="material-icons" style="position: relative; top: 8px;">file_download</i> 
+                            download high-res
+                        </a>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="img/_MG_1487 2.jpg">
+                    <div class="overlay" onclick="imgEl.show(url)">
+                        <h1>Klik om te bekijken</h1>
+                        <a href="" class="download">
+                            <i class="material-icons" style="position: relative; top: 8px;">file_download</i> 
+                            download high-res
+                        </a>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="img/_MG_1488 2.jpg">
+                    <div class="overlay" onclick="imgEl.show(url)">
+                        <h1>Klik om te bekijken</h1>
+                        <a href="" class="download">
+                            <i class="material-icons" style="position: relative; top: 8px;">file_download</i> 
+                            download high-res
+                        </a>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="img/_MG_1465 2.jpg">
+                    <div class="overlay" onclick="imgEl.show(url)">
+                        <h1>Klik om te bekijken</h1>
+                        <a href="" class="download">
+                            <i class="material-icons" style="position: relative; top: 8px;">file_download</i> 
+                            download high-res
+                        </a>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="img/_MG_1491 2.jpg">
+                    <div class="overlay" onclick="imgEl.show(url)">
+                        <h1>Klik om te bekijken</h1>
+                        <a href="" class="download">
+                            <i class="material-icons" style="position: relative; top: 8px;">file_download</i> 
+                            download high-res
+                        </a>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="img/_MG_1498 2.jpg">
+                    <div class="overlay" onclick="imgEl.show(url)">
+                        <h1>Klik om te bekijken</h1>
+                        <a href="" class="download">
+                            <i class="material-icons" style="position: relative; top: 8px;">file_download</i> 
+                            download high-res
+                        </a>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="img/_MG_1539 3.jpg">
+                    <div class="overlay" onclick="imgEl.show(url)">
+                        <h1>Klik om te bekijken</h1>
+                        <a href="" class="download">
+                            <i class="material-icons" style="position: relative; top: 8px;">file_download</i> 
+                            download high-res
+                        </a>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="img/_MG_1552 2.jpg">
+                    <div class="overlay" onclick="imgEl.show(url)">
+                        <h1>Klik om te bekijken</h1>
+                        <a href="" class="download">
+                            <i class="material-icons" style="position: relative; top: 8px;">file_download</i> 
+                            download high-res
+                        </a>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="img/_MG_1571 2.jpg">
+                    <div class="overlay" onclick="imgEl.show(url)">
+                        <h1>Klik om te bekijken</h1>
+                        <a href="" class="download">
+                            <i class="material-icons" style="position: relative; top: 8px;">file_download</i> 
+                            download high-res
+                        </a>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="img/_MG_1678 2.jpg">
+                    <div class="overlay" onclick="imgEl.show(url)">
+                        <h1>Klik om te bekijken</h1>
+                        <a href="" class="download">
+                            <i class="material-icons" style="position: relative; top: 8px;">file_download</i> 
+                            download high-res
+                        </a>
+                    </div>
+                </div>
+
+
+
+                <div class="view-image" onclick="this.hide()">
+                    <div class="img" onclick="event.stopPropagation()"></div>
+                </div>
+
+                <script>
+                    // Script for viewing images
+                    var imgEl = document.getElementsByClassName('view-image')[0];
+
+                    imgEl.show = function(url) {
+                        this.hidden = false;
+                        this.getElementsByClassName('img')[0].style.background = 'url(\'' + url + '\');';
+                    }
+
+                    imgEl.hide = function() {
+                        this.hidden = true;
+                    }
+                </script>
+
+            </section>
+            <section></section>
+        </div>
+        <footer>
+            <nav>
+                <a href="" selected>Home</a>
+                <a onclick="document.querySelector('.about-menu').hidden = false;">About</a>
+                <a href="">Concerts</a>
+                <a href="">Music</a>
+                <a href="">Gallery</a>
+                <ul class="about-menu" hidden>
+                    <li>Biography</li>
+                    <li>The conductor</li>
+                </ul>
+            </nav>
+
+            <br>
+
+            <div class="social">
+                <a href=""><img src="img/social/YouTube.svg"></a>
+                <a href=""><img src="img/social/Twitter.svg"></a>
+                <a href=""><img src="img/social/Facebook.svg"></a>
+            </div>
+
+            <br>
+
+            <div class="footer-content">
+                <p>Stichting The Gents</p>
+                <p>Asserpark 25</p>
+                <p>6706 HA</p>
+                <p>Wageningen</p>
+                <p>KVK: 12345678</p>
+            </div>
+            <div class="footer-content">
+                <p>Stichting The Gents</p>
+                <p>Asserpark 25</p>
+                <p>6706 HA</p>
+                <p>Wageningen</p>
+                <p>KVK: 12345678</p>
+            </div>
+            <div class="footer-content">
+                <p>Stichting The Gents</p>
+                <p>Asserpark 25</p>
+                <p>6706 HA</p>
+                <p>Wageningen</p>
+                <p>KVK: 12345678</p>
+            </div>
+        </footer>
+    </body>
+</html>
