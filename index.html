@@ -77,24 +77,6 @@
                 }
             </script> -->
 
-            <script>
-                // Script for showing/hiding the 'about' menu
-                var aboutMenu = document.getElementsByClassName('about-menu')[0];
-                aboutMenu.show = function() {
-                    this.hidden = false;
-                    setTimeout(function() { 
-                        aboutMenu.style.transform = 'translateY(0px) scale(1)';
-                        aboutMenu.style.opacity = 1;
-                    }, 0);
-                }
-
-                aboutMenu.hide = function() {
-                    this.style.transform = 'translateY(-25px) scale(.8)';
-                    this.style.opacity = 0;
-                    setTimeout(function() { aboutMenu.hidden = true }, 100);
-                }
-            </script>
-
             <a href="" class="language" data-msg="Switch to the english page"><img src="img/english.png"></a>
 
             <div class="scrolldown">
@@ -176,7 +158,7 @@
             <nav>
                 <a href="index.html">Home</a>
                 <span onmouseover="aboutMenu.show()" onmouseleave="aboutMenu.hide()">Over
-                    <ul class="about-menu" hidden>
+                    <ul class="about-menu">
                         <li><a href="biography.html">Biografie</a></li>
                         <li><a href="conductor.html">De dirigent</a></li>
                     </ul>
@@ -197,33 +179,59 @@
                 <a href=""><img src="img/social/Facebook.svg"></a>
             </div>
 
+            <p style="color: #fff">E-mail: info@thegents.nl</p>
             <br>
-
-            <a href="anbi.html">ANBI-status</a>
-
-            <br>
-
             <div class="footer-content">
-                <p>Stichting The Gents</p>
-                <p>Asserpark 25</p>
-                <p>6706 HA</p>
-                <p>Wageningen</p>
-                <p>KVK: 12345678</p>
+                <b>Dirigent</b>
+                <p>Annemiek van der Ven</p>
+                <b>Productie</b>
+                <p>Adri Mulder</p>
+                <p>+31 6 14057124</p>
+                <br>
             </div>
             <div class="footer-content">
-                <p>Stichting The Gents</p>
-                <p>Asserpark 25</p>
-                <p>6706 HA</p>
-                <p>Wageningen</p>
-                <p>KVK: 12345678</p>
+                <b>Bestuur</b>
+                <p>Geert Meijering, voorzitter</p>
+                <p>Kor Brouwer, secretaris</p>
+                <p>Hans Donkers, penningmeester</p>
+                <b>CD verkoop</b>
+                <p>Hans Donkers</p>
+                <p>+31 6 49422637</p>
             </div>
             <div class="footer-content">
+                <b>Kamer van Koophandel</b>
+                <p>KvK in Utrecht: 30153201</p>
                 <p>Stichting The Gents</p>
+                <b>Postadres</b>
                 <p>Asserpark 25</p>
-                <p>6706 HA</p>
-                <p>Wageningen</p>
-                <p>KVK: 12345678</p>
+                <p>6706 HA Wageningen</p>
+                <p>Nederland</p>
+            </div>
+
+            <br>
+
+            <div class="links">
+                <a href="http://ggbrw.nl/wiki/doku.php?id=start&do=login">Inloggen</a>
+                <a href="anbi.html">ANBI-status</a>
             </div>
         </footer>
+
+        <script>
+            // Script for showing/hiding the 'about' menus
+            var aboutMenu = document.getElementsByClassName('about-menu')[0];
+            aboutMenu.show = function() {
+                this.hidden = false;
+                setTimeout(function() { 
+                    aboutMenu.style.transform = 'translateY(0px) scale(1)';
+                    aboutMenu.style.opacity = 1;
+                }, 0);
+            }
+
+            aboutMenu.hide = function() {
+                this.style.transform = 'translateY(-25px) scale(.8)';
+                this.style.opacity = 0;
+                setTimeout(function() { aboutMenu.hidden = true }, 100);
+            }
+        </script>
     </body>
 </html>

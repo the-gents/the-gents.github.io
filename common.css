@@ -1,3 +1,73 @@
+@font-face {
+    font-family: 'Nexa Bold';
+    src: url('fonts/Nexa\ Bold.otf');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: 800;
+    src: url('fonts/Montserrat-ExtraBold.ttf');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: 800;
+    font-style: italic;
+    src: url('fonts/Montserrat-ExtraBoldItalic.ttf');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    src: url('fonts/Montserrat-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-style: italic;
+    src: url('fonts/Montserrat-BoldItalic.ttf');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: 600;
+    src: url('fonts/Montserrat-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-style: italic;
+    src: url('fonts/Montserrat-SemiBoldItalic.ttf');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    src: url('fonts/Montserrat-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-style: italic;
+    src: url('fonts/Montserrat-MediumItalic.ttf');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: 400;
+    src: url('fonts/Montserrat-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-style: italic;
+    src: url('fonts/Montserrat-RegularItalic.ttf');
+}
+
 body {
     margin: 0;
     overflow-x: hidden;
@@ -106,7 +176,7 @@ header > nav > a[selected], header > nav > span[selected] {
     opacity: 1;
 }
 
-header > nav .about-menu {
+.about-menu {
     position: absolute;
     top: 44px;
     left: 80px;
@@ -122,7 +192,7 @@ header > nav .about-menu {
     transition: transform .1s, opacity .1s;
 }
 
-header > nav .about-menu::before {
+.about-menu::before {
     content: '';
     position: absolute;
     border-style: solid;
@@ -135,18 +205,18 @@ header > nav .about-menu::before {
     margin-left: -10px;
 }
 
-header > nav .about-menu li {
+.about-menu li {
     font-family: 'Nexa Bold';
     font-size: 16px;
     text-align: center;
     cursor: pointer;
 }
 
-header nav .about-menu li:hover {
+.about-menu li:hover {
     background: rgba(0,0,0,.1);
 }
 
-header nav .about-menu li a {
+.about-menu li a {
     color: #000;
     text-decoration: none;
     padding: 10px;
@@ -378,12 +448,27 @@ footer nav a, footer nav span {
     text-decoration: none;
     font-family: 'Nexa Bold';
     font-size: 16px;
-    padding: 10px 25px;
+    padding: 20px 25px;
     cursor: pointer;
+    position: relative;
 }
 
-footer nav a:hover {
+footer nav a:hover, footer nav span:hover {
     color: #D13232;
+}
+
+footer nav span .about-menu {
+    top: 30px;
+    left: -25px;
+}
+
+footer nav span:hover .about-menu {
+    transform: translateY(0px) scale(.9);
+    opacity: 1;
+}
+
+footer nav .about-menu li {
+    padding: 20px 0;
 }
 
 footer .social {
@@ -403,6 +488,16 @@ footer .footer-content {
     display: inline-block;
     margin: 10px 25px;
     color: #fff;
+}
+
+footer .links {
+
+}
+
+footer .links a {
+    color: #D13232; 
+    font-size: 14px;
+    margin: 0 20px;
 }
 
 @media screen and (max-width: 800px) {
