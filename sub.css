@@ -307,7 +307,7 @@ section img {
     font-size: 16px;
     text-align: left;
 
-    background: #ddd url('img/_MG_1571 2.jpg'); 
+    background: #ddd url('img/_MG_1571_2.jpg'); 
     background-size: 200%;
     background-position: 50% 60%;
     background-blend-mode: screen;
@@ -399,7 +399,7 @@ section img {
 footer {
     width: 100%;
     padding: 50px 0;
-    background: #111 url('img/_MG_1765 2.jpg');
+    background: #111 url('img/_MG_1765_2.jpg');
     background-size: cover;
     background-position: 50% 50%;
     background-blend-mode: overlay;
