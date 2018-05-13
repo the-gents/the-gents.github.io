@@ -28,7 +28,7 @@
         <header>
             <div class="logo">
                 <h1>The <span style="color: #D13232">Gents</span></h1>
-                <h2>Vocal ensemble</h2>
+                <h2>Vocaal ensemble</h2>
             </div>
             <nav>
                 <a href="index.html">Home</a>
@@ -116,15 +116,19 @@
         </div>
         <footer>
             <nav>
-                <a href="" selected>Home</a>
-                <a onclick="document.querySelector('.about-menu').hidden = false;">About</a>
-                <a href="">Concerts</a>
-                <a href="">Music</a>
-                <a href="">Gallery</a>
-                <ul class="about-menu" hidden>
-                    <li>Biography</li>
-                    <li>The conductor</li>
-                </ul>
+                <a href="index.html">Home</a>
+                <span onmouseover="aboutMenu.show()" onmouseleave="aboutMenu.hide()">Over
+                    <ul class="about-menu" hidden>
+                        <li><a href="biography.html">Biografie</a></li>
+                        <li><a href="conductor.html">De dirigent</a></li>
+                    </ul>
+                </span>
+                <a href="concerts.html" selected>Concerten</a>
+                <a href="music.html">Muziek</a>
+                <a href="gallery.html">Galerij</a>
+                <button class="menu-btn" onclick="sideMenu.show()" hidden>
+                    <i class="material-icons">menu</i> <span>Menu</span>
+                </button>
             </nav>
 
             <br>
