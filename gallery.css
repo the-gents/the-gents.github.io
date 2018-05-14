@@ -1,7 +1,9 @@
 section .image {
     position: relative;
     width: 250px;
+    -height: 167px;
     display: inline-block;
+    overflow: hidden;
 }
 
 section .image img {
@@ -66,8 +68,7 @@ section .image .overlay:hover {
     width: 90%;
     height: 90%;
     margin: 50px auto;
-    background: url('img/_MG_1399_2.jpg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    background-position: center center !important;
 }
