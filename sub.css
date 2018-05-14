@@ -145,7 +145,7 @@ header {
         display: block !important;
     }
 
-    header > nav a {
+    header > nav a, header > nav span {
         display: none;
     }
 
@@ -172,6 +172,7 @@ header {
     }
 
     header .logo {
+        top: 50px;
         left: 50%;
         margin-left: -160px;
     } 
