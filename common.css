@@ -68,6 +68,10 @@
     src: url('fonts/Montserrat-Italic.ttf');
 }
 
+* {
+    letter-spacing: 0px;
+}
+
 body {
     margin: 0;
     overflow-x: hidden;

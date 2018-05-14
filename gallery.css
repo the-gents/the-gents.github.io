@@ -72,3 +72,15 @@ section .image .overlay:hover {
     background-size: contain !important;
     background-position: center center !important;
 }
+
+.view-image .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    font-size: 32px;
+}
