@@ -433,15 +433,15 @@ section img {
     section .concert {
         padding: 20px;
         margin: 20px auto;
-        width: 280px;
+        width: 250px;
     }
 
     section .concert .location {
-        font-size: 22px;
+        font-size: 20px;
     }
 
     section .concert .date {
-        font-size: 14px;
+        font-size: 12px;
     }
 }
 
