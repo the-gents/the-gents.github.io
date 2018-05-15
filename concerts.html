@@ -64,8 +64,8 @@
             <a href="" class="language" data-msg="Switch to the english page"><img src="img/english.png"></a>
         </header>
 
-        <div class="menu" hidden>
-            <i class="close material-icons" onclick="menu.hide()" style="cursor: pointer">close</i>
+        <div class="side-menu" hidden>
+            <i class="close material-icons" onclick="sideMenu.hide()" style="cursor: pointer">close</i>
             <h1>Menu</h1>
             <nav>
                 <a href="index.html" selected>Home</a>
@@ -78,25 +78,25 @@
         </div>            
 
         <script>
-            // Script for showing/hiding the menu for mobile devices
-            var menu = document.getElementsByClassName('menu')[0];
-            var header = document.getElementsByTagName('header')[0];
-
-            //onload = function() { menu.hidden = false; }
-
-            menu.show = function() {
-                setTimeout(function() { menu.style.transform = 'translateX(0px) scale(1)' }, 5);
-                setTimeout(function() { header.style.transform = 'translateX(250px)' });
-                setTimeout(function() { header.addEventListener('click', menu.hide) }, 300);
-            }
-
-            menu.hide = function() {
-                header.style.transform = 'translateX(0px)';
-                this.style.transform = 'translateX(-50px) scale(.9)';
-                header.removeEventListener('click', menu.hide);
-            }
-        </script>
-
+                // Script for showing/hiding the menu for mobile devices
+                var sideMenu = document.getElementsByClassName('side-menu')[0];
+                var header = document.getElementsByTagName('header')[0];
+    
+                onload = function() { sideMenu.hidden = false; }
+    
+                sideMenu.show = function() {
+                    //document.body.style.position = 'fixed';
+                    sideMenu.style.transform = 'translateX(0px)';
+                    setTimeout(function() { header.addEventListener('click', sideMenu.hide) }, 300);
+                }
+    
+                sideMenu.hide = function() {
+                    sideMenu.style.transform = 'translateX(-250px)';
+                    document.body.style.transform = 'translateX(0px)';
+                    document.body.style.position = 'static';
+                    header.removeEventListener('click', sideMenu.hide);
+                }
+            </script>
         <div class="content">
             <section>
                 <h1>Concerten</h1>
@@ -106,7 +106,7 @@
                     <div class="date">Zaterdag 26 mei 2018 <span>20:00</span></div>
 
                     <span class="location">Burgwalkerk, Kampen</span>
-                    <a style="font-size: 12px" href="https://www.google.nl/maps/place/Burgwalkerk/@52.5566565,5.9134227,17z/data=!3m1!4b1!4m5!3m4!1s0x47c87882ec98e2ab:0x609b95a4ba960116!8m2!3d52.5566565!4d5.9156113">
+                    <a class="gmaps" style="font-size: 12px" href="https://www.google.nl/maps/place/Burgwalkerk/@52.5566565,5.9134227,17z/data=!3m1!4b1!4m5!3m4!1s0x47c87882ec98e2ab:0x609b95a4ba960116!8m2!3d52.5566565!4d5.9156113">
                         <i class="material-icons">location_on</i>
                         Bekijk in Google Maps
                     </a>
@@ -123,7 +123,7 @@
                     <div class="date">Vrijdag 1 juni 2018 <span>20:00</span></div>
 
                     <span class="location">Pieterskerk, Utrecht</span>
-                    <a style="font-size: 12px" href="https://www.google.nl/maps/place/Pieterskerk/@52.0912908,5.1222538,17z/data=!3m1!4b1!4m5!3m4!1s0x47c66f4fe88d866f:0x273141fc3f646bf0!8m2!3d52.0912908!4d5.1244425">
+                    <a class="gmaps" style="font-size: 12px" href="https://www.google.nl/maps/place/Pieterskerk/@52.0912908,5.1222538,17z/data=!3m1!4b1!4m5!3m4!1s0x47c66f4fe88d866f:0x273141fc3f646bf0!8m2!3d52.0912908!4d5.1244425">
                         <i class="material-icons">location_on</i>
                         Bekijk in Google Maps
                     </a>
@@ -140,7 +140,7 @@
                     <div class="date">Zaterdag 30 juni 2018 <span>12:30</span></div>
 
                     <span class="location">Bonaventurakerk, Woerden</span>
-                    <a style="font-size: 12px" href="">
+                    <a class="gmaps" style="font-size: 12px" href="https://www.google.nl/maps/place/St.+Bonaventurakerk/@52.0850051,4.8847486,17z/data=!3m1!4b1!4m5!3m4!1s0x47c679d98f44c6d1:0x7c8a9097964b8622!8m2!3d52.0850051!4d4.8869373">
                         <i class="material-icons">location_on</i>
                         Bekijk in Google Maps
                     </a>
@@ -157,7 +157,7 @@
                     <div class="date">Zaterdag 1 september <span></span></div>
 
                     <span class="location"></span>
-                    <!-- <a style="font-size: 12px" href="">
+                    <!-- <a class="gmaps" style="font-size: 12px" href="">
                         <i class="material-icons">location_on</i>
                         Bekijk in Google Maps
                     </a> -->
@@ -174,7 +174,7 @@
                     <div class="date">Zondag 2 september 2018 <span></span></div>
 
                     <span class="location">Roden</span>
-                    <a style="font-size: 12px" href="">
+                    <a class="gmaps" style="font-size: 12px" href="https://www.google.nl/maps/place/Roden/@53.1359156,6.4093342,14z/data=!3m1!4b1!4m5!3m4!1s0x47c8341cf9370401:0xc3c72df35bcb2aa!8m2!3d53.1383574!4d6.4323693">
                         <i class="material-icons">location_on</i>
                         Bekijk in Google Maps
                     </a>
@@ -191,7 +191,7 @@
                     <div class="date">Zondag 16 september 2018 <span>19:00</span></div>
 
                     <span class="location">Bavokerk, Haarlem</span>
-                    <a style="font-size: 12px" href="">
+                    <a class="gmaps" style="font-size: 12px" href="https://www.google.nl/maps/place/The+St.+Bavo+Church+in+Haarlem/@52.378772,4.6257202,16z/data=!4m8!1m2!2m1!1sBavokerk,+Haarlem!3m4!1s0x47c5ef6bea0a4215:0x2cefd774cf4e0dab!8m2!3d52.3810706!4d4.6373349">
                         <i class="material-icons">location_on</i>
                         Bekijk in Google Maps
                     </a>
@@ -208,7 +208,7 @@
                     <div class="date">Zondag 4 november 2018 <span>14:15</span></div>
 
                     <span class="location">Michaelkerk, Schalkwijk</span>
-                    <a style="font-size: 12px" href="">
+                    <a class="gmaps" style="font-size: 12px" href="https://www.google.nl/maps/place/Heilige+Michaelkerk/@51.9949479,5.1823342,17z/data=!3m1!4b1!4m5!3m4!1s0x47c6673280e502cd:0x3de2828b3755fbd9!8m2!3d51.9949479!4d5.1845229">
                         <i class="material-icons">location_on</i>
                         Bekijk in Google Maps
                     </a>
@@ -225,7 +225,7 @@
                     <div class="date">Zondag 11 november 2018 <span></span></div>
 
                     <span class="location">Krijtbergkerk, Amsterdam</span>
-                    <a style="font-size: 12px" href="">
+                    <a class="gmaps" style="font-size: 12px" href="https://www.google.nl/maps/place/De+Krijtberg+Church/@52.3677581,4.8858459,17z/data=!3m1!4b1!4m5!3m4!1s0x47c609c1f6c80ab3:0x6930520c3e18eece!8m2!3d52.3677581!4d4.8880346">
                         <i class="material-icons">location_on</i>
                         Bekijk in Google Maps
                     </a>
@@ -242,7 +242,7 @@
                     <div class="date">Zondag 18 november 2018 <span></span></div>
 
                     <span class="location"></span>
-                    <!-- <a style="font-size: 12px" href="">
+                    <!-- <a class="gmaps" style="font-size: 12px" href="">
                         <i class="material-icons">location_on</i>
                         Bekijk in Google Maps
                     </a> -->
@@ -259,7 +259,7 @@
                     <div class="date">Zondag 25 november 2018 <span></span></div>
 
                     <span class="location"></span>
-                    <!-- <a style="font-size: 12px" href="">
+                    <!-- <a class="gmaps" style="font-size: 12px" href="">
                         <i class="material-icons">location_on</i>
                         Bekijk in Google Maps
                     </a> -->
@@ -277,7 +277,7 @@
 
                     <span class="location">Zalencentrum De Hoofdhof, Zwolle-Berkum</span>
                     <br>
-                    <a style="font-size: 12px" href="">
+                    <a class="gmaps" style="font-size: 12px" href="https://www.google.nl/maps/place/De+Hoofdhof/@52.5234508,6.1363143,17z/data=!3m1!4b1!4m5!3m4!1s0x47c7df9fe7f0804b:0x686e8b65cbbd890b!8m2!3d52.5234508!4d6.138503">
                         <i class="material-icons">location_on</i>
                         Bekijk in Google Maps
                     </a>

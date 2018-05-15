@@ -1,3 +1,13 @@
+body {
+    background: #fff;
+    transition: transform .2s;
+    margin: 0;
+    width: 100%;
+}
+
+html {
+    overflow-x: hidden;
+}
 
 header {
     height: 220px;
@@ -10,6 +20,8 @@ header {
     top: 40px;
     left: 5vw;
     width: 320px;
+    cursor: pointer;
+    user-select: none;
 }
 
 .logo h1 {
@@ -18,7 +30,7 @@ header {
     margin: 0;
     text-align: center;
     line-height: 110px;
-    background: rgba(0,0,0,.9);
+    background: rgba(0,0,0, 0.9);
     font-family: 'Nexa Bold';
     font-size: 50px;
     color: white;
@@ -29,10 +41,10 @@ header {
 .logo h2 {
     position: absolute;
     bottom: -50px;
-    left: 10px;
+    left: 5px;
     height: 30px;
     line-height: 32px;
-    font-family: Montserrat;
+    font-family: 'Nexa Bold';
     font-weight: 600;
     font-size: 16px;
     color: rgba(255,255,255,.75);
@@ -43,10 +55,10 @@ header {
 
 .logo h2::before {
     position: absolute;
-    left: -10px;
+    left: -5px;
     content: "";
     height: 30px;
-    width: 10px;
+    width: 5px;
     background: #D13232;
 }
 
@@ -86,11 +98,10 @@ header {
     transition: transform .3s;
 }
 
-.menu {
-    position: absolute;
+.side-menu {
     top: 0;
-    left: 0;
-    width: 300px;
+    left: 0px;
+    width: 250px;
     height: 100vh;
     
     background: #0f0f0f;
@@ -100,29 +111,30 @@ header {
     background-blend-mode: overlay;
 
     box-sizing: border-box;
-    z-index: 0;
-    transform: translateX(-50px) scale(.9);
-    transition: transform .3s;
+    z-index: 1;
+    transform: scale(1) translateX(-250px);
+    transition: transform .2s;
 
     padding: 20px;
     font-family: 'Montserrat';
     font-weight: 600;
     color: #fff;
+    user-select: none;
 }
 
-.menu h1 {
+.side-menu h1 {
     border-left: 5px solid #D13232;
     font-family: 'Nexa Bold';
     color: #fff;
     padding: 8px 15px;
 }
 
-.menu nav {
+.side-menu nav {
     width: 200px;
     padding: 5px 0;
 }
 
-.menu nav a {
+.side-menu nav a {
     background: rgba(255,255,255,.1);
     font-size: 14px;
     color: #fff;
@@ -132,7 +144,7 @@ header {
     margin: 5px 0;
 }
 
-.menu nav a:hover {
+.side-menu nav a:hover {
     color: #D13232;
 }
 
@@ -145,7 +157,7 @@ header {
         display: block !important;
     }
 
-    header > nav a, header > nav span {
+    header > nav a, header > nav > span {
         display: none;
     }
 
@@ -157,9 +169,9 @@ header {
 
     header > nav .menu-btn span {
         font-family: 'Nexa Bold';
-        color: #D13232;
+        color: #000;
         position: relative;
-        top: -7px;
+        top: -8px;
         left: 5px;
         font-size: 14px;
     }
@@ -169,18 +181,34 @@ header {
         position: absolute;
         top: 5px;
         left: 5px;
+        border: none;
     }
 
     header .logo {
-        top: 50px;
         left: 50%;
         margin-left: -160px;
+        margin-top: 20px;
     } 
 }
 
 @media screen and (max-width: 800px) {
     header {
         background-position: 33% 50%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    header .logo {
+        top: 50px;
+        text-align: center;
+    }
+
+    header .logo h1 {
+        width: 90%;
+    }
+
+    header .logo h2 {
+        left: 7%;
     }
 }
 
@@ -257,9 +285,11 @@ header .language:hover::after {
 }
 
 .content {
+    background: #fff;
     display: block;
     width: 100%;
     background: transparent;
+    z-index: 5;
 }
 
 section {
@@ -384,16 +414,26 @@ section img {
     }
 
     section img {
-        margin: 0 auto;
+        margin: 10px auto;
         width: 90%;
         height: auto;
-        float: none;
+        float: none !important;
         display: block;
     }
 
     section .concert {
         margin: 20px auto;
         width: 60vw;
+    }
+
+    header .language {
+        width: 25px;
+        padding: 2px;
+        bottom: 10px;
+    }
+
+    header .language img {
+        width: 25px;
     }
 }
 

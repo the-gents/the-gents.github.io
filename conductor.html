@@ -23,6 +23,34 @@
         <link rel="stylesheet" href="common.css">
         <link rel="stylesheet" href="sub.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <style>
+            .container {
+                margin-left: 100px; 
+                width: 400px;
+            }
+
+            .imgConductor {
+                width: 250px;
+                position: absolute;
+                right: 50px;
+                float: right; 
+                margin-top: 50px; 
+                margin-right: 100px;
+            }
+
+            @media screen and (max-width: 800px) {
+                .imgConductor {
+                    position: static;
+                    height: 250px;
+                    width: auto;
+                }
+
+                .container {
+                    margin: 0;
+                    width: 100%;
+                }
+            }
+        </style>
     </head>
     <body>
         <header>
@@ -63,8 +91,8 @@
             <a href="" class="language" data-msg="Switch to the english page"><img src="img/english.png"></a>
         </header>
 
-        <div class="menu" hidden>
-            <i class="close material-icons" onclick="menu.hide()" style="cursor: pointer">close</i>
+        <div class="side-menu" hidden>
+            <i class="close material-icons" onclick="sideMenu.hide()" style="cursor: pointer">close</i>
             <h1>Menu</h1>
             <nav>
                 <a href="index.html" selected>Home</a>
@@ -77,32 +105,33 @@
         </div>            
 
         <script>
-            // Script for showing/hiding the menu for mobile devices
-            var menu = document.getElementsByClassName('menu')[0];
-            var header = document.getElementsByTagName('header')[0];
-
-            //onload = function() { menu.hidden = false; }
-
-            menu.show = function() {
-                setTimeout(function() { menu.style.transform = 'translateX(0px) scale(1)' }, 5);
-                setTimeout(function() { header.style.transform = 'translateX(250px)' });
-                setTimeout(function() { header.addEventListener('click', menu.hide) }, 300);
-            }
-
-            menu.hide = function() {
-                header.style.transform = 'translateX(0px)';
-                this.style.transform = 'translateX(-50px) scale(.9)';
-                header.removeEventListener('click', menu.hide);
-            }
-        </script>
+                // Script for showing/hiding the menu for mobile devices
+                var sideMenu = document.getElementsByClassName('side-menu')[0];
+                var header = document.getElementsByTagName('header')[0];
+    
+                onload = function() { sideMenu.hidden = false; }
+    
+                sideMenu.show = function() {
+                    //document.body.style.position = 'fixed';
+                    sideMenu.style.transform = 'translateX(0px)';
+                    setTimeout(function() { header.addEventListener('click', sideMenu.hide) }, 300);
+                }
+    
+                sideMenu.hide = function() {
+                    sideMenu.style.transform = 'translateX(-250px)';
+                    document.body.style.transform = 'translateX(0px)';
+                    document.body.style.position = 'static';
+                    header.removeEventListener('click', sideMenu.hide);
+                }
+            </script>
 
         <div class="content">
             <section>
-                <img src="img/4.jpg" width="300" style="float: right; margin-top: 100px; margin-right: 100px">
-                <div class="container" style="margin-left: 100px; width: 400px;">
+                <div class="container">
                     <h1 style="margin-bottom: 20px">The conductor</h1>
                     <br>
                     <h1 style="font-size: 25px; margin: 0; font-style: italic; color: #D13232;">Annemiek van der Ven</h1>
+                    <img class="imgConductor" src="img/4.jpg">
                     <p> Met ingang van 1 januari 2018 werd Annemiek van der Ven de nieuwe dirigent van vocaal ensemble The Gents.
                             Met de benoeming van Annemiek van der Ven kozen The Gents opnieuw voor een jonge veelbelovende dirigente. In 2005 sloot zij de studie Docent Muziek af aan het Koninklijk Conservatorium van Den Haag, met als bijvak Klassiek Zang. In april 2010 slaagde zij ‘cum laude’ voor de opleiding koordirectie aan het Conservatorium van Amsterdam.
                     </p>

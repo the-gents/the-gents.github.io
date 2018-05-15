@@ -23,6 +23,27 @@
         <link rel="stylesheet" href="common.css">
         <link rel="stylesheet" href="sub.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <style>
+            .message {
+                font-size: 20px; font-weight: 600; opacity: .5;
+            }
+
+            section a {
+                display: block;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            @media screen and (max-width: 800px) {
+                .message {
+                    font-size: 16px;
+                }
+
+                section a {
+                    padding: 2px !important;
+                }
+            }
+        </style>
     </head>
     <body>
         <header>
@@ -63,8 +84,8 @@
             <a href="" class="language" data-msg="Switch to the english page"><img src="img/english.png"></a>
         </header>
 
-        <div class="menu" hidden>
-            <i class="close material-icons" onclick="menu.hide()" style="cursor: pointer">close</i>
+        <div class="side-menu" hidden>
+                <i class="close material-icons" onclick="sideMenu.hide()" style="cursor: pointer">close</i>
             <h1>Menu</h1>
             <nav>
                 <a href="index.html" selected>Home</a>
@@ -77,32 +98,33 @@
         </div>            
 
         <script>
-            // Script for showing/hiding the menu for mobile devices
-            var menu = document.getElementsByClassName('menu')[0];
-            var header = document.getElementsByTagName('header')[0];
-
-            //onload = function() { menu.hidden = false; }
-
-            menu.show = function() {
-                setTimeout(function() { menu.style.transform = 'translateX(0px) scale(1)' }, 5);
-                setTimeout(function() { header.style.transform = 'translateX(250px)' });
-                setTimeout(function() { header.addEventListener('click', menu.hide) }, 300);
-            }
-
-            menu.hide = function() {
-                header.style.transform = 'translateX(0px)';
-                this.style.transform = 'translateX(-50px) scale(.9)';
-                header.removeEventListener('click', menu.hide);
-            }
-        </script>
+                // Script for showing/hiding the menu for mobile devices
+                var sideMenu = document.getElementsByClassName('side-menu')[0];
+                var header = document.getElementsByTagName('header')[0];
+    
+                onload = function() { sideMenu.hidden = false; }
+    
+                sideMenu.show = function() {
+                    //document.body.style.position = 'fixed';
+                    sideMenu.style.transform = 'translateX(0px)';
+                    setTimeout(function() { header.addEventListener('click', sideMenu.hide) }, 300);
+                }
+    
+                sideMenu.hide = function() {
+                    sideMenu.style.transform = 'translateX(-250px)';
+                    document.body.style.transform = 'translateX(0px)';
+                    document.body.style.position = 'static';
+                    header.removeEventListener('click', sideMenu.hide);
+                }
+            </script>
 
         <div class="content">
             <section>
                 <h1>Muziek</h1>
-                <div style="font-size: 20px; font-weight: 600; opacity: .5">Binnenkort zal er muziek van The Gents op deze pagina te vinden zijn.</div>
+                <div class="message">Binnenkort zal er muziek van The Gents op deze pagina te vinden zijn.</div>
                 <br><br><br>
                 <a href="https://open.spotify.com/artist/6dWJvRTsfmxYqdp1t3TvoP">Beluister The Gents op Spotify</a>
-                <br><br>
+                <br>
                 <a href="https://itunes.apple.com/gb/artist/the-gents/136819893">Beluister The Gents op Apple Music</a>
             </section>
             <section></section>

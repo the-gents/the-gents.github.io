@@ -64,8 +64,8 @@
             <a href="" class="language" data-msg="Switch to the english page"><img src="img/english.png"></a>
         </header>
 
-        <div class="menu" hidden>
-            <i class="close material-icons" onclick="menu.hide()" style="cursor: pointer">close</i>
+        <div class="side-menu" hidden>
+            <i class="close material-icons" onclick="sideMenu.hide()" style="cursor: pointer">close</i>
             <h1>Menu</h1>
             <nav>
                 <a href="index.html" selected>Home</a>
@@ -79,21 +79,22 @@
 
         <script>
             // Script for showing/hiding the menu for mobile devices
-            var menu = document.getElementsByClassName('menu')[0];
+            var sideMenu = document.getElementsByClassName('side-menu')[0];
             var header = document.getElementsByTagName('header')[0];
 
-            //onload = function() { menu.hidden = false; }
+            onload = function() { sideMenu.hidden = false; }
 
-            menu.show = function() {
-                setTimeout(function() { menu.style.transform = 'translateX(0px) scale(1)' }, 5);
-                setTimeout(function() { header.style.transform = 'translateX(250px)' });
-                setTimeout(function() { header.addEventListener('click', menu.hide) }, 300);
+            sideMenu.show = function() {
+                //document.body.style.position = 'fixed';
+                sideMenu.style.transform = 'translateX(0px)';
+                setTimeout(function() { header.addEventListener('click', sideMenu.hide) }, 300);
             }
 
-            menu.hide = function() {
-                header.style.transform = 'translateX(0px)';
-                this.style.transform = 'translateX(-50px) scale(.9)';
-                header.removeEventListener('click', menu.hide);
+            sideMenu.hide = function() {
+                sideMenu.style.transform = 'translateX(-250px)';
+                document.body.style.transform = 'translateX(0px)';
+                document.body.style.position = 'static';
+                header.removeEventListener('click', sideMenu.hide);
             }
         </script>
 
@@ -105,7 +106,7 @@
                     <img src="img/1.jpg">
                     <div class="overlay" onclick="imgEl.show('img/1.jpg')">
                         <h1>Klik om te bekijken</h1>
-                        <a href="" class="download">
+                        <a href="img/1.jpg" download class="download" onclick="event.stopPropagation()">
                             <i class="material-icons" style="position: relative; top: 8px;">file_download</i> 
                             download high-res
                         </a>
@@ -115,7 +116,7 @@
                     <img src="img/2.jpg">
                     <div class="overlay" onclick="imgEl.show('img/2.jpg')">
                         <h1>Klik om te bekijken</h1>
-                        <a href="" class="download">
+                        <a href="img/2.jpg" download class="download" onclick="event.stopPropagation()">
                             <i class="material-icons" style="position: relative; top: 8px;">file_download</i> 
                             download high-res
                         </a>
@@ -125,7 +126,7 @@
                     <img src="img/3.jpg">
                     <div class="overlay" onclick="imgEl.show('img/3.jpg')">
                         <h1>Klik om te bekijken</h1>
-                        <a href="" class="download">
+                        <a href="img/3.jpg" download class="download" onclick="event.stopPropagation()">
                             <i class="material-icons" style="position: relative; top: 8px;">file_download</i> 
                             download high-res
                         </a>
@@ -135,7 +136,7 @@
                     <img src="img/5.jpg">
                     <div class="overlay" onclick="imgEl.show('img/5.jpg')">
                         <h1>Klik om te bekijken</h1>
-                        <a href="" class="download">
+                        <a href="img/5.jpg" download class="download" onclick="event.stopPropagation()">
                             <i class="material-icons" style="position: relative; top: 8px;">file_download</i> 
                             download high-res
                         </a>
@@ -145,7 +146,7 @@
                     <img src="img/6.jpg">
                     <div class="overlay" onclick="imgEl.show('img/6.jpg')">
                         <h1>Klik om te bekijken</h1>
-                        <a href="" class="download">
+                        <a href="img/6.jpg" download class="download" onclick="event.stopPropagation()">
                             <i class="material-icons" style="position: relative; top: 8px;">file_download</i> 
                             download high-res
                         </a>
@@ -155,7 +156,7 @@
                     <img src="img/7.jpg">
                     <div class="overlay" onclick="imgEl.show('img/7.jpg')">
                         <h1>Klik om te bekijken</h1>
-                        <a href="" class="download">
+                        <a href="img/7.jpg" download class="download" onclick="event.stopPropagation()">
                             <i class="material-icons" style="position: relative; top: 8px;">file_download</i> 
                             download high-res
                         </a>
@@ -165,7 +166,7 @@
                     <img src="img/8.jpg">
                     <div class="overlay" onclick="imgEl.show('img/8.jpg')">
                         <h1>Klik om te bekijken</h1>
-                        <a href="" class="download">
+                        <a href="img/8.jpg" download class="download" onclick="event.stopPropagation()">
                             <i class="material-icons" style="position: relative; top: 8px;">file_download</i> 
                             download high-res
                         </a>
@@ -175,7 +176,7 @@
                     <img src="img/9.jpg">
                     <div class="overlay" onclick="imgEl.show('img/9.jpg')">
                         <h1>Klik om te bekijken</h1>
-                        <a href="" class="download">
+                        <a href="img/9.jpg" download class="download" onclick="event.stopPropagation()">
                             <i class="material-icons" style="position: relative; top: 8px;">file_download</i> 
                             download high-res
                         </a>
@@ -185,7 +186,7 @@
                     <img src="img/10.jpg">
                     <div class="overlay" onclick="imgEl.show('img/10.jpg')">
                         <h1>Klik om te bekijken</h1>
-                        <a href="" class="download">
+                        <a href="img/10.jpg" download class="download" onclick="event.stopPropagation()">
                             <i class="material-icons" style="position: relative; top: 8px;">file_download</i> 
                             download high-res
                         </a>
@@ -195,7 +196,7 @@
                     <img src="img/11.jpg">
                     <div class="overlay" onclick="imgEl.show('img/11.jpg')">
                         <h1>Klik om te bekijken</h1>
-                        <a href="" class="download">
+                        <a href="img/11.jpg" download class="download" onclick="event.stopPropagation()">
                             <i class="material-icons" style="position: relative; top: 8px;">file_download</i> 
                             download high-res
                         </a>
@@ -205,7 +206,7 @@
                     <img src="img/12.jpg">
                     <div class="overlay" onclick="imgEl.show('img/12.jpg')">
                         <h1>Klik om te bekijken</h1>
-                        <a href="" class="download">
+                        <a href="img/12.jpg" download class="download" onclick="event.stopPropagation()">
                             <i class="material-icons" style="position: relative; top: 8px;">file_download</i> 
                             download high-res
                         </a>
@@ -215,7 +216,7 @@
                     <img src="img/13.jpg">
                     <div class="overlay" onclick="imgEl.show('img/13.jpg')">
                         <h1>Klik om te bekijken</h1>
-                        <a href="" class="download">
+                        <a href="img/13.jpg" download class="download" onclick="event.stopPropagation()">
                             <i class="material-icons" style="position: relative; top: 8px;">file_download</i> 
                             download high-res
                         </a>
@@ -225,7 +226,7 @@
                     <img src="img/14.jpg">
                     <div class="overlay" onclick="imgEl.show('img/14.jpg')">
                         <h1>Klik om te bekijken</h1>
-                        <a href="" class="download">
+                        <a href="img/14.jpg" download class="download" onclick="event.stopPropagation()">
                             <i class="material-icons" style="position: relative; top: 8px;">file_download</i> 
                             download high-res
                         </a>
@@ -235,7 +236,7 @@
                     <img src="img/15.jpg">
                     <div class="overlay" onclick="imgEl.show('img/15.jpg')">
                         <h1>Klik om te bekijken</h1>
-                        <a href="" class="download">
+                        <a href="img/15.jpg" download class="download" onclick="event.stopPropagation()">
                             <i class="material-icons" style="position: relative; top: 8px;">file_download</i> 
                             download high-res
                         </a>
@@ -245,7 +246,7 @@
                     <img src="img/16.jpg">
                     <div class="overlay" onclick="imgEl.show('img/16.jpg')">
                         <h1>Klik om te bekijken</h1>
-                        <a href="" class="download">
+                        <a href="img/16.jpg" download class="download" onclick="event.stopPropagation()">
                             <i class="material-icons" style="position: relative; top: 8px;">file_download</i> 
                             download high-res
                         </a>
@@ -255,7 +256,7 @@
                     <img src="img/18.jpg">
                     <div class="overlay" onclick="imgEl.show('img/18.jpg')">
                         <h1>Klik om te bekijken</h1>
-                        <a href="" class="download">
+                        <a href="img/18.jpg" download class="download" onclick="event.stopPropagation()">
                             <i class="material-icons" style="position: relative; top: 8px;">file_download</i> 
                             download high-res
                         </a>
@@ -265,7 +266,7 @@
                     <img src="img/19.jpg">
                     <div class="overlay" onclick="imgEl.show('img/19.jpg')">
                         <h1>Klik om te bekijken</h1>
-                        <a href="" class="download">
+                        <a href="img/19.jpg" download class="download" onclick="event.stopPropagation()">
                             <i class="material-icons" style="position: relative; top: 8px;">file_download</i> 
                             download high-res
                         </a>
@@ -275,7 +276,7 @@
                     <img src="img/20.jpg">
                     <div class="overlay" onclick="imgEl.show('img/20.jpg')">
                         <h1>Klik om te bekijken</h1>
-                        <a href="" class="download">
+                        <a href="img/20.jpg" download class="download" onclick="event.stopPropagation()">
                             <i class="material-icons" style="position: relative; top: 8px;">file_download</i> 
                             download high-res
                         </a>
@@ -285,7 +286,7 @@
                     <img src="img/21.jpg">
                     <div class="overlay" onclick="imgEl.show('img/21.jpg')">
                         <h1>Klik om te bekijken</h1>
-                        <a href="" class="download">
+                        <a href="img/21.jpg" download class="download" onclick="event.stopPropagation()">
                             <i class="material-icons" style="position: relative; top: 8px;">file_download</i> 
                             download high-res
                         </a>
@@ -296,7 +297,7 @@
                     <img src="img/17.jpg">
                     <div class="overlay" onclick="imgEl.show('img/17.jpg')">
                         <h1>Klik om te bekijken</h1>
-                        <a href="" class="download">
+                        <a href="img/17.jpg" download class="download" onclick="event.stopPropagation()">
                             <i class="material-icons" style="position: relative; top: 8px;">file_download</i> 
                             download high-res
                         </a>
@@ -306,7 +307,7 @@
                     <img src="img/4.jpg">
                     <div class="overlay" onclick="imgEl.show('img/4.jpg')">
                         <h1>Klik om te bekijken</h1>
-                        <a href="" class="download">
+                        <a href="img/4.jpg" download class="download" onclick="event.stopPropagation()">
                             <i class="material-icons" style="position: relative; top: 8px;">file_download</i> 
                             download high-res
                         </a>
@@ -317,6 +318,10 @@
                 <div class="view-image" onclick="this.hide()" hidden>
                     <button class="close material-icons" onclick="imgEl.hide()">close</button>
                     <div class="img" onclick="event.stopPropagation()"></div>
+                    <a href="img/1.jpg" download class="download" onclick="event.stopPropagation()">
+                        <i class="material-icons" style="position: relative; top: 8px;">file_download</i> 
+                        download high-res
+                    </a>
                 </div>
 
                 <script>

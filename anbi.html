@@ -68,8 +68,8 @@
             <a href="" class="language" data-msg="Switch to the english page"><img src="img/english.png"></a>
         </header>
 
-        <div class="menu" hidden>
-            <i class="close material-icons" onclick="menu.hide()" style="cursor: pointer">close</i>
+        <div class="side-menu" hidden>
+            <i class="close material-icons" onclick="sideMenu.hide()" style="cursor: pointer">close</i>
             <h1>Menu</h1>
             <nav>
                 <a href="index.html" selected>Home</a>
@@ -82,31 +82,32 @@
         </div>            
 
         <script>
-            // Script for showing/hiding the menu for mobile devices
-            var menu = document.getElementsByClassName('menu')[0];
-            var header = document.getElementsByTagName('header')[0];
-
-            //onload = function() { menu.hidden = false; }
-
-            menu.show = function() {
-                setTimeout(function() { menu.style.transform = 'translateX(0px) scale(1)' }, 5);
-                setTimeout(function() { header.style.transform = 'translateX(250px)' });
-                setTimeout(function() { header.addEventListener('click', menu.hide) }, 300);
-            }
-
-            menu.hide = function() {
-                header.style.transform = 'translateX(0px)';
-                this.style.transform = 'translateX(-50px) scale(.9)';
-                header.removeEventListener('click', menu.hide);
-            }
-        </script>
+                // Script for showing/hiding the menu for mobile devices
+                var sideMenu = document.getElementsByClassName('side-menu')[0];
+                var header = document.getElementsByTagName('header')[0];
+    
+                onload = function() { sideMenu.hidden = false; }
+    
+                sideMenu.show = function() {
+                    //document.body.style.position = 'fixed';
+                    sideMenu.style.transform = 'translateX(0px)';
+                    setTimeout(function() { header.addEventListener('click', sideMenu.hide) }, 300);
+                }
+    
+                sideMenu.hide = function() {
+                    sideMenu.style.transform = 'translateX(-250px)';
+                    document.body.style.transform = 'translateX(0px)';
+                    document.body.style.position = 'static';
+                    header.removeEventListener('click', sideMenu.hide);
+                }
+            </script>
 
         <div class="content">
             <section>
                 <h1>ANBI-status</h1>
                 <div class="container" style="max-width: 500px;">
                     <h1 style="font-size: 25px; margin: 0; font-style: italic; color: #D13232;">Stichting The Gents 
-                        <span style="font-size: 16px; font-style: normal; opacity: .75; margin-left: 20px;">(dd. 18-01-2017)</span>
+                        <span style="display: inline-block; font-size: 16px; font-style: normal; opacity: .75; margin-left: 10px;">(dd. 18-01-2017)</span>
                     </h1>
                     <p>Het RSIN/fiscaal nummer: <code style="background: #eee; padding: 5px;">808926743</code></p>
                     <br>

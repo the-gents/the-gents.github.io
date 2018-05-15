@@ -131,14 +131,15 @@ header {
 .message {
     position: absolute;
     bottom: 5vh;
-    right: 7vw;
+    left: 50%;
+    margin-left: 20vw;
     min-width: 200px;
-    padding: 7px 50px 7px 20px;
+    padding: 7px 50px 20px 20px;
     background: rgba(247,250,255,.9);
     mix-blend-mode: difference;
     font-family: Montserrat;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     z-index: 2;
     box-shadow: 0 3px 6px rgba(0,0,0,.16);
 }
@@ -215,8 +216,12 @@ header {
 }
 
 @media screen and (max-width: 1100px) {
+    section h1 {
+        font-size: 28px;
+        margin-bottom: 0;
+    }
     section img {
-        width: 300px;
+        width: 90%;
         height: auto;
     }
 }
