@@ -68,7 +68,7 @@
     src: url('fonts/Montserrat-Italic.ttf');
 }
 
-* {
+*:not(b):not(h1):not(h2):not(h3):not(h4) {
     letter-spacing: 0px;
     font-weight: 400;
 }
