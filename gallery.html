@@ -34,7 +34,7 @@
             <nav>
                 <a href="index.html">Home</a>
                 <span onmouseover="aboutMenu.show()" onmouseleave="aboutMenu.hide()">Over
-                    <ul class="about-menu" hidden>
+                    <ul class="about-menu">
                         <li><a href="biography.html">Biografie</a></li>
                         <li><a href="conductor.html">De dirigent</a></li>
                     </ul>
@@ -46,20 +46,6 @@
                     <i class="material-icons">menu</i> <span>Menu</span>
                 </button>
             </nav>
-
-            <script>
-                // Script for showing/hiding the 'about' menu
-                var aboutMenu = document.getElementsByClassName('about-menu')[0];
-                aboutMenu.show = function() {
-                    this.hidden = false;
-                    setTimeout(function() { aboutMenu.style.opacity = 1 }, 0);
-                }
-
-                aboutMenu.hide = function() {
-                    this.style.opacity = 0;
-                    setTimeout(function() { aboutMenu.hidden = true }, 200);
-                }
-            </script>
 
             <a href="" class="language" data-msg="Switch to the english page"><img src="img/english.png"></a>
         </header>

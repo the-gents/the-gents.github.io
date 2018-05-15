@@ -196,7 +196,7 @@ header > nav > a[selected], header > nav > span[selected] {
     padding: 10px 0;
     box-shadow: 0 3px 6px rgba(0,0,0,.16);
 
-    transform: translateY(-20px) scale(.9);
+    transform: translateY(-25px) scale(.9);
     opacity: 0;
     transition: transform .1s, opacity .1s;
 }
@@ -230,6 +230,11 @@ header > nav > a[selected], header > nav > span[selected] {
     text-decoration: none;
     padding: 10px;
 }   
+
+header > nav > span:hover .about-menu {
+    transform: translateY(0px) scale(1);
+    opacity: 1;
+}
 
 header .menu-btn {
     width: 60px;
@@ -475,12 +480,12 @@ footer nav a:hover, footer nav span:hover {
 }
 
 footer nav span .about-menu {
-    top: 30px;
+    top: 40px;
     left: -25px;
 }
 
 footer nav span:hover .about-menu {
-    transform: translateY(0px) scale(.9);
+    transform: translateY(0px) scale(1);
     opacity: 1;
 }
 

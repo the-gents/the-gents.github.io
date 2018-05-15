@@ -61,7 +61,7 @@
             <nav>
                 <a href="index.html">Home</a>
                 <span onmouseover="aboutMenu.show()" onmouseleave="aboutMenu.hide()" selected>Over
-                    <ul class="about-menu" hidden>
+                    <ul class="about-menu">
                         <li><a href="biography.html">Biografie</a></li>
                         <li><a href="conductor.html">De dirigent</a></li>
                     </ul>
@@ -73,20 +73,6 @@
                     <i class="material-icons">menu</i> <span>Menu</span>
                 </button>
             </nav>
-
-            <script>
-                // Script for showing/hiding the 'about' menu
-                var aboutMenu = document.getElementsByClassName('about-menu')[0];
-                aboutMenu.show = function() {
-                    this.hidden = false;
-                    setTimeout(function() { aboutMenu.style.opacity = 1 }, 0);
-                }
-
-                aboutMenu.hide = function() {
-                    this.style.opacity = 0;
-                    setTimeout(function() { aboutMenu.hidden = true }, 200);
-                }
-            </script>
 
             <a href="" class="language" data-msg="Switch to the english page"><img src="img/english.png"></a>
         </header>
@@ -105,25 +91,25 @@
         </div>            
 
         <script>
-                // Script for showing/hiding the menu for mobile devices
-                var sideMenu = document.getElementsByClassName('side-menu')[0];
-                var header = document.getElementsByTagName('header')[0];
-    
-                onload = function() { sideMenu.hidden = false; }
-    
-                sideMenu.show = function() {
-                    //document.body.style.position = 'fixed';
-                    sideMenu.style.transform = 'translateX(0px)';
-                    setTimeout(function() { header.addEventListener('click', sideMenu.hide) }, 300);
-                }
-    
-                sideMenu.hide = function() {
-                    sideMenu.style.transform = 'translateX(-250px)';
-                    document.body.style.transform = 'translateX(0px)';
-                    document.body.style.position = 'static';
-                    header.removeEventListener('click', sideMenu.hide);
-                }
-            </script>
+            // Script for showing/hiding the menu for mobile devices
+            var sideMenu = document.getElementsByClassName('side-menu')[0];
+            var header = document.getElementsByTagName('header')[0];
+
+            onload = function() { sideMenu.hidden = false; }
+
+            sideMenu.show = function() {
+                //document.body.style.position = 'fixed';
+                sideMenu.style.transform = 'translateX(0px)';
+                setTimeout(function() { header.addEventListener('click', sideMenu.hide) }, 300);
+            }
+
+            sideMenu.hide = function() {
+                sideMenu.style.transform = 'translateX(-250px)';
+                document.body.style.transform = 'translateX(0px)';
+                document.body.style.position = 'static';
+                header.removeEventListener('click', sideMenu.hide);
+            }
+        </script>
 
         <div class="content">
             <section>

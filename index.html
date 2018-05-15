@@ -31,20 +31,20 @@
                 <h2>Vocaal ensemble</h2>
             </div>
             <nav>
-                    <a href="index.html" selected>Home</a>
-                    <span onmouseover="aboutMenu.show()" onmouseleave="aboutMenu.hide()">Over
-                        <ul class="about-menu" hidden>
-                            <li><a href="biography.html">Biografie</a></li>
-                            <li><a href="conductor.html">De dirigent</a></li>
-                        </ul>
-                    </span>
-                    <a href="concerts.html">Concerten</a>
-                    <a href="music.html">Muziek</a>
-                    <a href="gallery.html">Galerij</a>
-                    <button class="menu-btn" onclick="sideMenu.show()" hidden>
-                        <i class="material-icons">menu</i> <span>Menu</span>
-                    </button>
-            </nav>
+                <a href="index.html" selected>Home</a>
+                <span onmouseover="aboutMenu.show()" onmouseleave="aboutMenu.hide()">Over
+                    <ul class="about-menu">
+                        <li><a href="biography.html">Biografie</a></li>
+                        <li><a href="conductor.html">De dirigent</a></li>
+                    </ul>
+                </span>
+                <a href="concerts.html">Concerten</a>
+                <a href="music.html">Muziek</a>
+                <a href="gallery.html">Galerij</a>
+                <button class="menu-btn" onclick="sideMenu.show()" hidden>
+                    <i class="material-icons">menu</i> <span>Menu</span>
+                </button>
+        </nav>
 
             <a href="" class="language" data-msg="Switch to the english page"><img src="img/english.png"></a>
 
@@ -185,23 +185,5 @@
                 <a href="anbi.html">ANBI-status</a>
             </div>
         </footer>
-
-        <script>
-            // Script for showing/hiding the 'about' menus
-            var aboutMenu = document.getElementsByClassName('about-menu')[0];
-            aboutMenu.show = function() {
-                this.hidden = false;
-                setTimeout(function() { 
-                    aboutMenu.style.transform = 'translateY(0px) scale(1)';
-                    aboutMenu.style.opacity = 1;
-                }, 0);
-            }
-
-            aboutMenu.hide = function() {
-                this.style.transform = 'translateY(-25px) scale(.8)';
-                this.style.opacity = 0;
-                setTimeout(function() { aboutMenu.hidden = true }, 100);
-            }
-        </script>
     </body>
 </html>
