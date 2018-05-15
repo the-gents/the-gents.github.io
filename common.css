@@ -68,6 +68,10 @@
     src: url('fonts/Montserrat-Italic.ttf');
 }
 
+* {
+    outline: none;
+}
+
 *:not(b):not(h1):not(h2):not(h3):not(h4) {
     letter-spacing: 0px;
     font-weight: 400;
@@ -386,6 +390,7 @@ section img {
     .content {
         padding: 0;
     }
+
     section {
         position: relative;
         padding: 25px 0 0 0;
@@ -497,10 +502,6 @@ footer .footer-content {
     color: #fff;
 }
 
-footer .links {
-
-}
-
 footer .links a {
     color: #D13232; 
     font-size: 14px;
@@ -516,5 +517,4 @@ footer .links a {
     footer .links a {
         font-size: 12px;
     }
-
 }

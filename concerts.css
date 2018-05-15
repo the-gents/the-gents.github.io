@@ -8,11 +8,13 @@
 }
 
 .concert div {
+    font-weight: 600;   
     margin: 15px 0;
 }
 
 .concert .location {
     padding: 20px 0;
+    font-weight: 600;
 }
 
 .concert .gmaps {
@@ -21,6 +23,10 @@
     left: 15px;
     text-align: left;
     padding: 0;
+}
+
+.concert .date span {
+    font-weight: 600;
 }
 
 .concert .material-icons {
