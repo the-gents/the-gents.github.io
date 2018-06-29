@@ -50,7 +50,7 @@
 
             <div class="scrolldown">
                 <i class="material-icons">keyboard_arrow_down</i>
-                Scroll down
+                Scroll naar beneden
             </div>
         </header>
 
@@ -88,14 +88,14 @@
         </script>
 
         <div class="content">
-            <div class="message">
+            <!-- <div class="message">
                 <h3>Nieuws</h3>
                 Nieuwe audio, zie onder Muziek!
                 <br/>
                 Twee opnamen van ons nieuwste programma:
                 <h4>To Mary</h4><br/>
                 <a href="./concerts.html">Lees meer...</a>
-            </div>
+            </div> -->
             <section>
                 <img height="300" src="img/1.jpg" alt="" style="margin-right: 2vw">
                 <div class="container" style="margin-left: 2vw">
@@ -109,7 +109,7 @@
                 <div style="clear: both"></div>
                 
             </section>
-            <section style="text-align: center">
+            <section class="concerts" style="text-align: center">
                 <h1>Aankomende concerten</h1>
                 <br>
 <!--
@@ -119,13 +119,93 @@
                     <a href="http://www.pieterskerkconcerten.nl/" class="ticket-btn">Bestel kaarten</a>
                 </div>
 -->
-                <div class="concert">
+                <!-- <div class="concert">
                     <div class="date">Zaterdag 30 juni 2018 <span>20:00</span></div>
                     <div class="location">Bonaventurakerk, Woerden</div>
                     <a href="#" class="ticket-btn">Vrije toegang</a>
-                </div>                
+                </div>      -->
+                
+                <div class="concertContainer" style="padding: 0;">
+                    <p style="font-size: 25px; color: #888; padding-bottom: 25px;">Concerten ophalen...</p>
+                </div>
+                
+                <script>
+                    var concerts = [[]];
+
+                    var concertContainer = document.querySelector('.concertContainer');
+
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('GET', "https://spreadsheets.google.com/feeds/cells/1iJf_yzipT49XyGZb6vxi8wQIjJYlSfXo5atZV5kQrTI/1/public/values?alt=json", true);
+                    xhr.onload = function() {
+                        var data = JSON.parse(xhr.responseText);
+                        var entries = Array.from(data.feed.entry);
+                        while(+entries[0]['gs$cell'].row < 6 && entries.length) entries.splice(0,1);
+                        
+                        var lastRow = +entries[0]['gs$cell'].row;
+                        for(var i = 0; i < entries.length; ++i) {
+                            var e = entries[i];
+
+                            var row = +e['gs$cell'].row;
+                            if(row != lastRow) {
+                                concerts.push([]);
+                                lastRow = row;
+                            }
+
+                            var col = +e['gs$cell'].col - 1;
+                            concerts.slice(-1)[0][col] = e.content["$t"];
+                        }
+
+                        concertContainer.innerHTML = "";
+                        for(var i = 0; i < Math.min(1, concerts.length); ++i) {
+                            var concert = concerts[i];
+
+                            var date = concert[0] || "";
+                            var time = concert[1] || "";
+                            var location = concert[2] || "";
+                            var gMapsLink = concert[3] || "";
+                            var concertType = concert[4] || "";
+                            var additional = concert[5] || "";
+                            var ticketLink = concert[6] || "";
+                            var ticketBtnText = concert[7] || "";
+
+                            concertContainer.innerHTML +=
+                                '<div class="concert">' +
+                                    '<div class="date">' + date + '<span>' + time + '</span></div>' +
+                                    '<span class="location">' + location + '</span>' +
+                                    '<a class="gmaps" style="font-size: 12px" href="' + gMapsLink + '">' +
+                                        '<i class="material-icons">location_on</i>' + 
+                                        'Bekijk in Google Maps' + 
+                                    '</a>' +
+                                    '<div class="description">' + 
+                                        concertType + 
+                                        '<br>' + 
+                                        '<span style="font-size: 12px;">' + additional + '</span>' + 
+                                    '</div>' + 
+                                    '<a href="' + ticketLink + '" class="ticket-btn" ' + (ticketLink ? '' : 'disabled') + '>' +
+                                    ((ticketLink || !ticketBtnText) ? 'Bestel kaarten' : ticketBtnText) + '</a>' + 
+                                '</div>';
+                        }
+                    };
+                    xhr.send();
+                </script>
+
                 <div style="clear: both"></div>
                 <a href="concerts.html">Bekijk alle aankomende concerten...</a>
+            </section>
+            <section style="text-align: center">
+                <h1>Nieuws</h1>
+                <br>
+                <div class="news-item">
+                    <h2>Opnamen van ons nieuwste programma</h2>
+                    Er zijn twee opnamen van ons nieuwe programma 
+                    <br><b>To Mary</b> beschikbaar. 
+                    <br><br>
+                    <a href="music.html">Beluister de opnamen</a>
+                </div>
+                <div class="news-item">
+                    <h2>Website vernieuwd</h2>
+                    Onze website is compleet vernieuwd! 
+                </div>
             </section>
             <section></section>
         </div>

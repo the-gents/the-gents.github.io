@@ -1,0 +1,25 @@
+<script>
+    let concerts = [[]];
+
+    let data;
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', "https://spreadsheets.google.com/feeds/cells/1iJf_yzipT49XyGZb6vxi8wQIjJYlSfXo5atZV5kQrTI/1/public/values?alt=json", true);
+    xhr.onload = function() {
+        data = JSON.parse(xhr.responseText);
+        let entries = Array.from(data.feed.entry);
+        while(+entries[0]['gs$cell'].row < 6 && entries.length) entries.splice(0,1);
+        
+        let lastRow = +entries[0]['gs$cell'].row;
+        for(let e of entries) {
+            const row = +e['gs$cell'].row;
+            if(row != lastRow) {
+                concerts.push([]);
+                lastRow = row;
+            }
+
+            const col = +e['gs$cell'].col - 1;
+            concerts.slice(-1)[0][col] = e.content["$t"];
+        }
+    };
+    xhr.send();
+</script>

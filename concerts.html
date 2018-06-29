@@ -111,218 +111,69 @@
                     <br>
                 </div>
 
-
-                <!-- VOORBEELD CONCERT
-                    let op: de concerten zijn op datum gesorteerd! Zorg dat onderstaand stukje code op de juiste plaats wordt geplaatst
-
-                <div class="concert">
-                    <div class="date">DAG_NAAM DAG_NUMMER MAAND JAAR <span>TIJD (hh:mm)</span></div>
-
-                    <span class="location">NAAM_KERK, PLAATSNAAM</span>
-                    <a class="gmaps" style="font-size: 12px" href="LINK NAAR LOCATIE IN GOOGLE MAPS">
-                        <i class="material-icons">location_on</i>
-                        Bekijk in Google Maps
-                    </a>
-
-                    <div class="description">
-                        BESCHRIJVING
-                        <br>
-                        <span style="font-size: 12px;">SUB_BESCHRIJVING</span>
-                    </div>
-                    <a href="LINK NAAR BESTELLEN TICKET" class="ticket-btn">Bestel kaarten</a>
-                </div> 
-
-                -->
-
-              <!--  <div class="concert">
-                    <div class="date">Zaterdag 26 mei 2018 <span>20:00</span></div>
-
-                    <span class="location">Burgwalkerk, Kampen</span>
-                    <a class="gmaps" style="font-size: 12px" href="https://www.google.nl/maps/place/Burgwalkerk/@52.5566565,5.9134227,17z/data=!3m1!4b1!4m5!3m4!1s0x47c87882ec98e2ab:0x609b95a4ba960116!8m2!3d52.5566565!4d5.9156113">
-                        <i class="material-icons">location_on</i>
-                        Bekijk in Google Maps
-                    </a>
-
-                    <div class="description">
-                        The Gents in concert
-                        <br>
-                        <span style="font-size: 12px;">o.l.v. Annemiek van der Ven</span>
-                    </div>
-                    <a href="http://www.onlineticketsverkopen.nl/beheer/winkel/47" class="ticket-btn">Bestel kaarten</a>
-                </div> 
-
-
-                <div class="concert">
-                    <div class="date">Vrijdag 1 juni 2018 <span>20:00</span></div>
-
-                    <span class="location">Pieterskerk, Utrecht</span>
-                    <a class="gmaps" style="font-size: 12px" href="https://www.google.nl/maps/place/Pieterskerk/@52.0912908,5.1222538,17z/data=!3m1!4b1!4m5!3m4!1s0x47c66f4fe88d866f:0x273141fc3f646bf0!8m2!3d52.0912908!4d5.1244425">
-                        <i class="material-icons">location_on</i>
-                        Bekijk in Google Maps
-                    </a>
-
-                    <div class="description">
-                        To Mary
-                        <br>
-                        <span style="font-size: 12px;">o.l.v. Annemiek van der Ven</span>
-                    </div>
-                    <a href="http://www.pieterskerkconcerten.nl/" class="ticket-btn">Bestel kaarten</a>
-                </div>
--->
-
-                <div class="concert">
-                    <div class="date">Zaterdag 30 juni 2018 <span>12:30</span></div>
-
-                    <span class="location">Bonaventurakerk, Woerden</span>
-                    <a class="gmaps" style="font-size: 12px" href="https://www.google.nl/maps/place/St.+Bonaventurakerk/@52.0850051,4.8847486,17z/data=!3m1!4b1!4m5!3m4!1s0x47c679d98f44c6d1:0x7c8a9097964b8622!8m2!3d52.0850051!4d4.8869373">
-                        <i class="material-icons">location_on</i>
-                        Bekijk in Google Maps
-                    </a>
-
-                    <div class="description">
-                        Evensong, met organist Geerten Liefting
-                        <br>
-                        <span style="font-size: 12px;">o.l.v. Annemiek van der Ven</span>
-                    </div>
-                    <a disabled href="http://www.onlineticketsverkopen.nl/beheer/winkel/47" class="ticket-btn">Bestel kaarten</a>
+                <div class="concertContainer" style="text-align: center">
+                    <p style="font-size: 25px; color: #888; padding-bottom: 25px;">Concerten ophalen...</p>
                 </div>
 
-                <div class="concert">
-                    <div class="date">Zaterdag 1 september <span></span></div>
+                <script>
+                    var concerts = [[]];
 
-                    <span class="location"></span>
-                    <!-- <a class="gmaps" style="font-size: 12px" href="">
-                        <i class="material-icons">location_on</i>
-                        Bekijk in Google Maps
-                    </a> -->
+                    var concertContainer = document.querySelector('.concertContainer');
 
-                    <div class="description">
-                        Meer informatie volgt.
-                        <br>
-                        <span style="font-size: 12px;">o.l.v. Annemiek van der Ven</span>
-                    </div>
-                    <a disabled href="http://www.onlineticketsverkopen.nl/beheer/winkel/47" class="ticket-btn">Bestel kaarten</a>
-                </div>
-
-                <div class="concert">
-                    <div class="date">Zondag 2 september 2018 <span></span></div>
-
-                    <span class="location">Roden</span>
-                    <a class="gmaps" style="font-size: 12px" href="https://www.google.nl/maps/place/Roden/@53.1359156,6.4093342,14z/data=!3m1!4b1!4m5!3m4!1s0x47c8341cf9370401:0xc3c72df35bcb2aa!8m2!3d53.1383574!4d6.4323693">
-                        <i class="material-icons">location_on</i>
-                        Bekijk in Google Maps
-                    </a>
-
-                    <div class="description">
-                        Meer informatie volgt.
-                        <br>
-                        <span style="font-size: 12px;">o.l.v. Annemiek van der Ven</span>
-                    </div>
-                    <a disabled href="http://www.onlineticketsverkopen.nl/beheer/winkel/47" class="ticket-btn">Bestel kaarten</a>
-                </div>
-
-                <div class="concert">
-                    <div class="date">Zondag 16 september 2018 <span>19:00</span></div>
-
-                    <span class="location">Bavokerk, Haarlem</span>
-                    <a class="gmaps" style="font-size: 12px" href="https://www.google.nl/maps/place/The+St.+Bavo+Church+in+Haarlem/@52.378772,4.6257202,16z/data=!4m8!1m2!2m1!1sBavokerk,+Haarlem!3m4!1s0x47c5ef6bea0a4215:0x2cefd774cf4e0dab!8m2!3d52.3810706!4d4.6373349">
-                        <i class="material-icons">location_on</i>
-                        Bekijk in Google Maps
-                    </a>
-
-                    <div class="description">
-                        Evensong
-                        <br>
-                        <span style="font-size: 12px;">o.l.v. Annemiek van der Ven</span>
-                    </div>
-                    <a disabled href="http://www.onlineticketsverkopen.nl/beheer/winkel/47" class="ticket-btn">Bestel kaarten</a>
-                </div>
-
-                <div class="concert">
-                    <div class="date">Zondag 4 november 2018 <span>14:15</span></div>
-
-                    <span class="location">Michaelkerk, Schalkwijk</span>
-                    <a class="gmaps" style="font-size: 12px" href="https://www.google.nl/maps/place/Heilige+Michaelkerk/@51.9949479,5.1823342,17z/data=!3m1!4b1!4m5!3m4!1s0x47c6673280e502cd:0x3de2828b3755fbd9!8m2!3d51.9949479!4d5.1845229">
-                        <i class="material-icons">location_on</i>
-                        Bekijk in Google Maps
-                    </a>
-
-                    <div class="description">
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('GET', "https://spreadsheets.google.com/feeds/cells/1iJf_yzipT49XyGZb6vxi8wQIjJYlSfXo5atZV5kQrTI/1/public/values?alt=json", true);
+                    xhr.onload = function() {
+                        var data = JSON.parse(xhr.responseText);
+                        var entries = Array.from(data.feed.entry);
+                        while(+entries[0]['gs$cell'].row < 6 && entries.length) entries.splice(0,1);
                         
-                        <br>
-                        <span style="font-size: 12px;">o.l.v. Annemiek van der Ven</span>
-                    </div>
-                    <a disabled href="http://www.onlineticketsverkopen.nl/beheer/winkel/47" class="ticket-btn">Bestel kaarten</a>
-                </div>
+                        var lastRow = +entries[0]['gs$cell'].row;
+                        for(var i = 0; i < entries.length; ++i) {
+                            var e = entries[i];
 
-                <div class="concert">
-                    <div class="date">Zondag 11 november 2018 <span></span></div>
+                            var row = +e['gs$cell'].row;
+                            if(row != lastRow) {
+                                concerts.push([]);
+                                lastRow = row;
+                            }
 
-                    <span class="location">Krijtbergkerk, Amsterdam</span>
-                    <a class="gmaps" style="font-size: 12px" href="https://www.google.nl/maps/place/De+Krijtberg+Church/@52.3677581,4.8858459,17z/data=!3m1!4b1!4m5!3m4!1s0x47c609c1f6c80ab3:0x6930520c3e18eece!8m2!3d52.3677581!4d4.8880346">
-                        <i class="material-icons">location_on</i>
-                        Bekijk in Google Maps
-                    </a>
+                            var col = +e['gs$cell'].col - 1;
+                            concerts.slice(-1)[0][col] = e.content["$t"];
+                        }
 
-                    <div class="description">
-                        
-                        <br>
-                        <span style="font-size: 12px;">o.l.v. Annemiek van der Ven</span>
-                    </div>
-                    <a disabled href="http://www.onlineticketsverkopen.nl/beheer/winkel/47" class="ticket-btn">Bestel kaarten</a>
-                </div>
+                        concertContainer.innerHTML = "";
+                        for(var i = 0; i < concerts.length; ++i) {
+                            var concert = concerts[i];
 
-                <div class="concert">
-                    <div class="date">Woensdag 12 december 2018 <span></span></div>
+                            var date = concert[0] || "";
+                            var time = concert[1] || "";
+                            var location = concert[2] || "";
+                            var gMapsLink = concert[3] || "";
+                            var concertType = concert[4] || "";
+                            var additional = concert[5] || "";
+                            var ticketLink = concert[6] || "";
+                            var ticketBtnText = concert[7] || "";
 
-                    <span class="location">Museum Prinsenhof, Delft</span>
-                    <a class="gmaps" style="font-size: 12px" href="https://www.google.com/maps/place/Museum+Prinsenhof+Delft/@52.0121393,4.3524073,17z/data=!3m1!4b1!4m5!3m4!1s0x47c5b5c465ed8e61:0x34475e8ea77dec95!8m2!3d52.012136!4d4.354596">
-                        <i class="material-icons">location_on</i>
-                        Bekijk in Google Maps
-                    </a>
-
-                    <div class="description">
-                        Met de Regimentsfanfare Garde Grenadiers en Jagers
-                        <br>
-                        <span style="font-size: 12px;">o.l.v. Annemiek van der Ven</span>
-                    </div>
-                    <a disabled href="http://www.onlineticketsverkopen.nl/beheer/winkel/47" class="ticket-btn">Bestel kaarten</a>
-                </div>                
-                
-                <div class="concert">
-                    <div class="date">Zondag 18 november 2018 <span></span></div>
-
-                    <span class="location"></span>
-                    <!-- <a class="gmaps" style="font-size: 12px" href="">
-                        <i class="material-icons">location_on</i>
-                        Bekijk in Google Maps
-                    </a> -->
-
-                    <div class="description">
-                        CD-presentatieconcert
-                        <br>
-                        <span style="font-size: 12px;">o.l.v. Annemiek van der Ven</span>
-                    </div>
-                    <a disabled href="http://www.onlineticketsverkopen.nl/beheer/winkel/47" class="ticket-btn">Bestel kaarten</a>
-                </div>
-
-                <div class="concert">
-                    <div class="date">Zondag 10 februari 2019 <span>15:00</span></div>
-
-                    <span class="location">Zalencentrum De Hoofdhof, Zwolle-Berkum</span>
-                    <br>
-                    <a class="gmaps" style="font-size: 12px" href="https://www.google.nl/maps/place/De+Hoofdhof/@52.5234508,6.1363143,17z/data=!3m1!4b1!4m5!3m4!1s0x47c7df9fe7f0804b:0x686e8b65cbbd890b!8m2!3d52.5234508!4d6.138503">
-                        <i class="material-icons">location_on</i>
-                        Bekijk in Google Maps
-                    </a>
-
-                    <div class="description">
-                        CD-presentatieconcert
-                        <br>
-                        <span style="font-size: 12px;">o.l.v. Annemiek van der Ven</span>
-                    </div>
-                    <a disabled href="http://www.onlineticketsverkopen.nl/beheer/winkel/47" class="ticket-btn">Bestel kaarten</a>
-                </div>
+                            concertContainer.innerHTML +=
+                                '<div class="concert">' +
+                                    '<div class="date">' + date + '<span>' + time + '</span></div>' +
+                                    '<span class="location">' + location + '</span>' +
+                                    '<a class="gmaps" style="font-size: 12px" href="' + gMapsLink + '">' +
+                                        '<i class="material-icons">location_on</i>' + 
+                                        'Bekijk in Google Maps' + 
+                                    '</a>' +
+                                    '<div class="description">' + 
+                                        concertType + 
+                                        '<br>' + 
+                                        '<span style="font-size: 12px;">' + additional + '</span>' + 
+                                    '</div>' + 
+                                    '<a href="' + ticketLink + '" class="ticket-btn" ' + (ticketLink ? '' : 'disabled') + '>' +
+                                    ((ticketLink || !ticketBtnText) ? 'Bestel kaarten' : ticketBtnText) + '</a>' + 
+                                '</div>';
+                        }
+                    };
+                    xhr.send();
+                </script>
             </section>
             <section></section>
         </div>

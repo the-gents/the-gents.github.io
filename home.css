@@ -1,6 +1,6 @@
 header {
     position: relative;
-    background: url('img/background.png');
+    background: url('img/background2.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
@@ -135,8 +135,8 @@ header {
     margin-left: 20vw;
     min-width: 200px;
     padding: 7px 50px 20px 20px;
-    background: rgba(247,250,255,.9);
-    mix-blend-mode: difference;
+    background: rgba(225,240,250,.9);
+    border-radius: 5px;
     font-family: Montserrat;
     font-size: 14px;
     font-weight: 400;
@@ -232,14 +232,14 @@ header {
     font-size: 16px;
     text-align: left;
 
-    background: #ddd url('img/6.jpg'); 
+    background: #eee url('img/6.jpg'); 
     background-size: 200%;
     background-position: 50% 60%;
     background-blend-mode: screen;
     display: inline-block;
     padding: 35px 50px;
     margin: 10px 25px 50px 25px;
-    width: 300px;
+    height: 200px;
 }
 
 .concert .date {
@@ -271,6 +271,10 @@ header {
     font-weight: 600;
 }
 
+.concert .gmaps {
+    white-space: nowrap;
+}
+
 .concert .ticket-btn {
     background: #D13232;
     padding: 10px;
@@ -280,6 +284,24 @@ header {
     width: 120px;
     text-align: center;
     margin: 20px 0;
+}
+
+.news-item {
+    margin: 10px auto;
+    width: 400px;
+    padding: 20px;
+    background: #eee url('img/6.jpg'); 
+    background-size: 200%;
+    background-position: 50% 60%;
+    background-blend-mode: screen;
+    position: relative;
+}
+
+.news-item h2 {
+    margin: 0 0 10px 0;
+    font-weight: 600;
+    font-size: 18px;
+    -color: #D13232;
 }
 
 .language {

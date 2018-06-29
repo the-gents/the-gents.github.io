@@ -77,6 +77,11 @@
     font-weight: 400;
 }
 
+*::selection {
+    background: #D13232;
+    color: white;
+}
+
 body {
     margin: 0;
     overflow-x: hidden;
@@ -85,10 +90,10 @@ body {
 
 header {
     position: relative;
-    background: url('img/background.png');
+    background: url('img/background2.png');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 50% 50%;
+    background-position: 50% 45%;
     display: block;
     width: 100vw;
     height: 100vh;
@@ -199,6 +204,8 @@ header > nav > a[selected], header > nav > span[selected] {
     transform: translateY(-25px) scale(.9);
     opacity: 0;
     transition: transform .1s, opacity .1s;
+
+    pointer-events: none;
 }
 
 .about-menu::before {
@@ -234,6 +241,7 @@ header > nav > a[selected], header > nav > span[selected] {
 header > nav > span:hover .about-menu {
     transform: translateY(0px) scale(1);
     opacity: 1;
+    pointer-events: all;
 }
 
 header .menu-btn {
@@ -265,7 +273,7 @@ header {
     height: 100vh;
     
     background: #0f0f0f;
-    background-image: url('img/background.png');
+    background-image: url('img/background2.png');
     background-size: auto 100%;
     background-position: 25% center;
     background-blend-mode: overlay;
@@ -430,10 +438,17 @@ section img {
         display: block;
     }
 
-    section .concert {
+    section .concert, section .news-item {
         padding: 20px;
-        margin: 20px auto;
-        width: 250px;
+        margin: 10px auto;
+        width: auto;
+        height: auto;
+    }
+
+    section .concert a, section .news-item a {
+        padding: 0px;
+        margin: 0px auto;
+        display: inline-block;
     }
 
     section .concert .location {
