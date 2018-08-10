@@ -55,6 +55,7 @@
                 <a href="concerts.html" selected>Concerten</a>
                 <a href="music.html">Muziek</a>
                 <a href="gallery.html">Galerij</a>
+                <a href="friend.html" style="color: #D13232">Word vriend</a>
                 <button class="menu-btn" onclick="sideMenu.show()" hidden>
                     <i class="material-icons">menu</i> <span>Menu</span>
                 </button>
@@ -73,6 +74,7 @@
                 <a href="concerts.html">Concerten</a>
                 <a href="music.html">Muziek</a>
                 <a href="gallery.html">Galerij</a>
+                <a href="friend.html" style="color: #D13232">Word vriend</a>
             </nav>
         </div>            
 
@@ -152,6 +154,9 @@
                             var concertType = concert[4] || "";
                             var additional = concert[5] || "";
                             var ticketLink = concert[6] || "";
+                            if(!ticketLink.includes("http://") && !ticketLink.includes("https://")) 
+                                ticketLink = "http://" + ticketLink;
+                                
                             var ticketBtnText = concert[7] || "";
 
                             concertContainer.innerHTML +=
@@ -234,6 +239,7 @@
             <br>
 
             <div class="links">
+                <a href="friend.html" style="color: #D13232">Word vriend</a>
                 <a href="http://ggbrw.nl/wiki/doku.php?id=start&do=login">Inloggen</a>
                 <a href="anbi.html">ANBI-status</a>
             </div>
