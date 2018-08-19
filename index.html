@@ -90,14 +90,10 @@
         </script>
 
         <div class="content">
-            <!-- <div class="message">
-                <h3>Nieuws</h3>
-                Nieuwe audio, zie onder Muziek!
-                <br/>
-                Twee opnamen van ons nieuwste programma:
-                <h4>To Mary</h4><br/>
-                <a href="./concerts.html">Lees meer...</a>
-            </div> -->
+                <div class="news-message" hidden>
+                    <button class="close material-icons" onclick="this.parentNode.hidden = true">close</button>
+                    <div class="content"></div>
+                </div>
             <section>
                 <img height="300" src="img/1.jpg" alt="" style="margin-right: 2vw">
                 <div class="container" style="margin-left: 2vw">
@@ -136,62 +132,64 @@
 
                     var concertContainer = document.querySelector('.concertContainer');
 
-                    var xhr = new XMLHttpRequest();
-                    xhr.open('GET', "https://spreadsheets.google.com/feeds/cells/1iJf_yzipT49XyGZb6vxi8wQIjJYlSfXo5atZV5kQrTI/1/public/values?alt=json", true);
-                    xhr.onload = function() {
-                        var data = JSON.parse(xhr.responseText);
-                        var entries = Array.from(data.feed.entry);
-                        while(+entries[0]['gs$cell'].row < 6 && entries.length) entries.splice(0,1);
-                        
-                        var lastRow = +entries[0]['gs$cell'].row;
-                        for(var i = 0; i < entries.length; ++i) {
-                            var e = entries[i];
+                    (function() {
+                        var xhr = new XMLHttpRequest();
+                        xhr.open('GET', "https://spreadsheets.google.com/feeds/cells/1iJf_yzipT49XyGZb6vxi8wQIjJYlSfXo5atZV5kQrTI/1/public/values?alt=json", true);
+                        xhr.onload = function() {
+                            var data = JSON.parse(xhr.responseText);
+                            var entries = Array.from(data.feed.entry);
+                            while(+entries[0]['gs$cell'].row < 6 && entries.length) entries.splice(0,1);
+                            
+                            var lastRow = +entries[0]['gs$cell'].row;
+                            for(var i = 0; i < entries.length; ++i) {
+                                var e = entries[i];
 
-                            var row = +e['gs$cell'].row;
-                            if(row != lastRow) {
-                                concerts.push([]);
-                                lastRow = row;
+                                var row = +e['gs$cell'].row;
+                                if(row != lastRow) {
+                                    concerts.push([]);
+                                    lastRow = row;
+                                }
+
+                                var col = +e['gs$cell'].col - 1;
+                                concerts.slice(-1)[0][col] = e.content["$t"];
                             }
 
-                            var col = +e['gs$cell'].col - 1;
-                            concerts.slice(-1)[0][col] = e.content["$t"];
-                        }
+                            concertContainer.innerHTML = "";
+                            for(var i = 0; i < Math.min(1, concerts.length); ++i) {
+                                var concert = concerts[i];
 
-                        concertContainer.innerHTML = "";
-                        for(var i = 0; i < Math.min(1, concerts.length); ++i) {
-                            var concert = concerts[i];
+                                var date = concert[0] || "";
+                                var time = concert[1] || "";
+                                var location = concert[2] || "";
+                                var gMapsLink = concert[3] || "";
+                                var concertType = concert[4] || "";
+                                var additional = concert[5] || "";
+                                var ticketLink = concert[6] || "";
+                                if(!ticketLink.includes("http://") && !ticketLink.includes("https://")) 
+                                    ticketLink = "http://" + ticketLink;
 
-                            var date = concert[0] || "";
-                            var time = concert[1] || "";
-                            var location = concert[2] || "";
-                            var gMapsLink = concert[3] || "";
-                            var concertType = concert[4] || "";
-                            var additional = concert[5] || "";
-                            var ticketLink = concert[6] || "";
-                            if(!ticketLink.includes("http://") && !ticketLink.includes("https://")) 
-                                ticketLink = "http://" + ticketLink;
+                                var ticketBtnText = concert[7] || "";
 
-                            var ticketBtnText = concert[7] || "";
-
-                            concertContainer.innerHTML +=
-                                '<div class="concert">' +
-                                    '<div class="date">' + date + '<span>' + time + '</span></div>' +
-                                    '<span class="location">' + location + '</span>' +
-                                    '<a class="gmaps" style="font-size: 12px" href="' + gMapsLink + '">' +
-                                        '<i class="material-icons">location_on</i>' + 
-                                        'Bekijk in Google Maps' + 
-                                    '</a>' +
-                                    '<div class="description">' + 
-                                        concertType + 
-                                        '<br>' + 
-                                        '<span style="font-size: 12px;">' + additional + '</span>' + 
-                                    '</div>' + 
-                                    '<a href="' + ticketLink + '" class="ticket-btn" ' + (ticketLink ? '' : 'disabled') + '>' +
-                                    ((ticketLink || !ticketBtnText) ? 'Bestel kaarten' : ticketBtnText) + '</a>' + 
-                                '</div>';
-                        }
-                    };
-                    xhr.send();
+                                concertContainer.innerHTML +=
+                                    '<div class="concert">' +
+                                        '<div class="date">' + date + '<span>' + time + '</span></div>' +
+                                        '<span class="location">' + location + '</span>' +
+                                        '<a class="gmaps" style="font-size: 12px" href="' + gMapsLink + '">' +
+                                            '<i class="material-icons">location_on</i>' + 
+                                            'Bekijk in Google Maps' + 
+                                        '</a>' +
+                                        '<div class="description">' + 
+                                            concertType + 
+                                            '<br>' + 
+                                            '<span style="font-size: 12px;">' + additional + '</span>' + 
+                                        '</div>' + 
+                                        '<a href="' + ticketLink + '" class="ticket-btn" ' + (ticketLink ? '' : 'disabled') + '>' +
+                                        ((ticketLink || !ticketBtnText) ? 'Bestel kaarten' : ticketBtnText) + '</a>' + 
+                                    '</div>';
+                            }
+                        };
+                        xhr.send();
+                    })();
                 </script>
 
                 <div style="clear: both"></div>
@@ -200,17 +198,87 @@
             <section style="text-align: center">
                 <h1>Nieuws</h1>
                 <br>
-                <div class="news-item">
-                    <h2>Opnamen van ons nieuwste programma</h2>
-                    Er zijn twee opnamen van ons nieuwe programma 
-                    <br><b>To Mary</b> beschikbaar. 
-                    <br><br>
-                    <a href="music.html">Beluister de opnamen</a>
+
+                <div class="newsContainer" style="padding: 0;">
+                    <p style="font-size: 25px; color: #888; padding-bottom: 25px;">Nieuws ophalen...</p>
                 </div>
-                <div class="news-item">
-                    <h2>Website vernieuwd</h2>
-                    Onze website is compleet vernieuwd! 
-                </div>
+
+                <script>
+                    var newsitems = [[]];
+
+                    var newsContainer = document.querySelector('.newsContainer');
+                    var newsMessageFrontPage = document.querySelector('.news-message');
+                    newsMessageFrontPage.show = function() {
+                        this.hidden = false;
+                        setTimeout(function() {
+                            newsMessageFrontPage.style.transform = 'scale(1.1)';
+                            newsMessageFrontPage.style.opacity = 1;    
+                        },10);
+
+                        setTimeout(function() {
+                            newsMessageFrontPage.style.transform = 'scale(1)';
+                        },300);
+                    }
+
+                    //(function() {
+                        var xhr = new XMLHttpRequest();
+                        xhr.open('GET', "https://spreadsheets.google.com/feeds/cells/1wqpyDQ9Mpmr421-HkSkg3aHaBH_vmUmNyyGVMhk1HxQ/od6/public/values?alt=json", true);
+                        xhr.onload = function() {
+                            var data = JSON.parse(xhr.responseText);
+                            var entries = Array.from(data.feed.entry);
+                            while(+entries[0]['gs$cell'].row < 6 && entries.length) entries.splice(0,1);
+                            
+                            var lastRow = +entries[0]['gs$cell'].row;
+                            for(var i = 0; i < entries.length; ++i) {
+                                var e = entries[i];
+
+                                var row = +e['gs$cell'].row;
+
+                                if(row != lastRow) {
+                                    newsitems.push([]);
+                                    lastRow = row;
+                                }
+
+                                var col = +e['gs$cell'].col - 1;
+                                newsitems.slice(-1)[0][col] = e.content["$t"];
+                            }
+
+                            newsContainer.innerHTML = "";
+                            for(var i = 0; i < newsitems.length; ++i) {
+                                var newsitem = newsitems[i];
+
+                                var title = newsitem[0] || "";
+                                var text = newsitem[1] || "";
+                                var linkText = newsitem[2] || "";
+                                var linkURL = newsitem[3] || "";
+                                if(!linkURL.includes("http://") && !linkURL.includes("https://")) 
+                                    linkURL = "http://" + linkURL;
+
+                                if(newsitem[4]) {
+                                    newsMessageFrontPage.querySelector('.content').innerHTML = 
+                                    '<h2>' + title + '</h2>' +
+                                    text +
+                                    (linkText ? 
+                                    '<br><br><a href="' + linkURL + '">' + linkText + '</a>' :
+                                    '');
+
+                                    newsMessageFrontPage.show();
+                                } else {
+                                    newsContainer.innerHTML +=
+                                    '<div class="news-item">' +
+                                        '<h2>' + title + '</h2>' +
+                                        text +
+                                        (linkText ? 
+                                        '<br><br><a href="' + linkURL + '">' + linkText + '</a>' :
+                                        '')
+                                    '</div>';
+                                }
+                            }
+                        }
+
+                        xhr.send();
+                    //})();
+                </script>
             </section>
             <section></section>
         </div>
