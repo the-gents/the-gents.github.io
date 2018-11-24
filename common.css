@@ -465,12 +465,22 @@ section img {
         padding: 0;
     }
 
+    .scrolldown .material-icons {
+        font-size: 40px !important;
+        display: block;
+    }
+
+    .scrolldown {
+        font-size: 8px !important;
+    }
+
     .news-message {
         position: absolute;
-        bottom: 120px;
+        bottom: 15%;
         left: 50%;
         margin-left: -160px;
         width: 280px;
+        height: auto;
         padding: 10px 20px;
     }
 
