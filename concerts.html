@@ -124,57 +124,66 @@
 
                     var xhr = new XMLHttpRequest();
                     xhr.open('GET', "https://spreadsheets.google.com/feeds/cells/1iJf_yzipT49XyGZb6vxi8wQIjJYlSfXo5atZV5kQrTI/1/public/values?alt=json", true);
+                    xhr.onerror = function() {
+                        concertContainer.innerHTML = "<span style='color: #888'>Kan concerten op dit moment niet ophalen. " +
+                        "U kunt voor nu op <a href='https://docs.google.com/spreadsheets/d/1iJf_yzipT49XyGZb6vxi8wQIjJYlSfXo5atZV5kQrTI/edit#gid=0'>deze spreadsheet</a> de concerten bekijken. Excuses voor het omgemak.</span>";
+                    }
                     xhr.onload = function() {
-                        var data = JSON.parse(xhr.responseText);
-                        var entries = Array.from(data.feed.entry);
-                        while(+entries[0]['gs$cell'].row < 6 && entries.length) entries.splice(0,1);
-                        
-                        var lastRow = +entries[0]['gs$cell'].row;
-                        for(var i = 0; i < entries.length; ++i) {
-                            var e = entries[i];
+                        try {
+                            var data = JSON.parse(xhr.responseText);
+                            var entries = data.feed.entry;
+                            while(+entries[0]['gs$cell'].row < 6 && entries.length) entries.splice(0,1);
+                            
+                            var lastRow = +entries[0]['gs$cell'].row;
+                            for(var i = 0; i < entries.length; ++i) {
+                                var e = entries[i];
 
-                            var row = +e['gs$cell'].row;
-                            if(row != lastRow) {
-                                concerts.push([]);
-                                lastRow = row;
+                                var row = +e['gs$cell'].row;
+                                if(row != lastRow) {
+                                    concerts.push([]);
+                                    lastRow = row;
+                                }
+
+                                var col = +e['gs$cell'].col - 1;
+                                concerts.slice(-1)[0][col] = e.content["$t"];
                             }
 
-                            var col = +e['gs$cell'].col - 1;
-                            concerts.slice(-1)[0][col] = e.content["$t"];
-                        }
+                            concertContainer.innerHTML = "";
+                            for(var i = 0; i < concerts.length; ++i) {
+                                var concert = concerts[i];
 
-                        concertContainer.innerHTML = "";
-                        for(var i = 0; i < concerts.length; ++i) {
-                            var concert = concerts[i];
+                                var date = concert[0] || "";
+                                var time = concert[1] || "";
+                                var location = concert[2] || "";
+                                var gMapsLink = concert[3] || "";
+                                var concertType = concert[4] || "";
+                                var additional = concert[5] || "";
+                                var ticketLink = concert[6] || "";
+                                if(ticketLink.indexOf("http://") == -1 && ticketLink.indexOf("https://") == -1) 
+                                        ticketLink = "http://" + ticketLink;
+                                    
+                                var ticketBtnText = concert[7] || "";
 
-                            var date = concert[0] || "";
-                            var time = concert[1] || "";
-                            var location = concert[2] || "";
-                            var gMapsLink = concert[3] || "";
-                            var concertType = concert[4] || "";
-                            var additional = concert[5] || "";
-                            var ticketLink = concert[6] || "";
-                            if(!ticketLink.includes("http://") && !ticketLink.includes("https://")) 
-                                ticketLink = "http://" + ticketLink;
-                                
-                            var ticketBtnText = concert[7] || "";
-
-                            concertContainer.innerHTML +=
-                                '<div class="concert">' +
-                                    '<div class="date">' + date + '<span>' + time + '</span></div>' +
-                                    '<span class="location">' + location + '</span>' +
-                                    '<a class="gmaps" style="font-size: 12px" href="' + gMapsLink + '">' +
-                                        '<i class="material-icons">location_on</i>' + 
-                                        'Bekijk in Google Maps' + 
-                                    '</a>' +
-                                    '<div class="description">' + 
-                                        concertType + 
-                                        '<br>' + 
-                                        '<span style="font-size: 12px;">' + additional + '</span>' + 
-                                    '</div>' + 
-                                    '<a href="' + ticketLink + '" class="ticket-btn" ' + (ticketLink ? '' : 'disabled') + '>' +
-                                        (ticketBtnText || 'Bestel kaarten') + '</a>' + 
-                                '</div>';
+                                concertContainer.innerHTML +=
+                                    '<div class="concert">' +
+                                        '<div class="date">' + date + '<span>' + time + '</span></div>' +
+                                        '<span class="location">' + location + '</span>' +
+                                        '<a class="gmaps" style="font-size: 12px" href="' + gMapsLink + '">' +
+                                            '<i class="material-icons">location_on</i>' + 
+                                            'Bekijk in Google Maps' + 
+                                        '</a>' +
+                                        '<div class="description">' + 
+                                            concertType + 
+                                            '<br>' + 
+                                            '<span style="font-size: 12px;">' + additional + '</span>' + 
+                                        '</div>' + 
+                                        '<a href="' + ticketLink + '" class="ticket-btn" ' + (ticketLink ? '' : 'disabled') + '>' +
+                                            (ticketBtnText || 'Bestel kaarten') + '</a>' + 
+                                    '</div>';
+                            }
+                        } catch(e) {
+                            concertContainer.innerHTML = "<span style='color: #888'>Kan concerten op dit moment niet ophalen. " +
+                        "U kunt voor nu op <a href='https://docs.google.com/spreadsheets/d/1iJf_yzipT49XyGZb6vxi8wQIjJYlSfXo5atZV5kQrTI/edit#gid=0'>deze spreadsheet</a> de concerten bekijken. Excuses voor het omgemak.</span>"
                         }
                     };
                     xhr.send();
