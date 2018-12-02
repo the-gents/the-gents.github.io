@@ -338,10 +338,10 @@ section img {
     font-size: 16px;
     text-align: left;
 
-    background: #ddd url('img/6.jpg'); 
+    background: url('img/6.jpg'); 
     background-size: 200%;
     background-position: 50% 60%;
-    background-blend-mode: screen;
+    box-shadow: inset 0 0 0 1000px rgba(255,255,255,.9);
     display: inline-block;
     padding: 20px 25px;
     margin: 10px 25px 25px 25px;
