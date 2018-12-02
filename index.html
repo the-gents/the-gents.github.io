@@ -145,7 +145,7 @@
                         xhr.onload = function() {
                             try {
                             var data = JSON.parse(xhr.responseText);
-                            var entries = daata.feed.entry;
+                            var entries = data.feed.entry;
                             while(+entries[0]['gs$cell'].row < 6 && entries.length) entries.splice(0,1);
                             
                             var lastRow = +entries[0]['gs$cell'].row;
