@@ -238,9 +238,13 @@
                     //(function() {
                         var xhr = new XMLHttpRequest();
                         xhr.open('GET', "https://spreadsheets.google.com/feeds/cells/1wqpyDQ9Mpmr421-HkSkg3aHaBH_vmUmNyyGVMhk1HxQ/od6/public/values?alt=json", true);
+                        xhr.onerror = function() {
+                            newsitems.innerHTML = "<span style='color: #888'>Kan nieuws-items op dit moment niet ophalen.";
+                        }
                         xhr.onload = function() {
+                            try {
                             var data = JSON.parse(xhr.responseText);
-                            var entries = Array.from(data.feed.entry);
+                            var entries = data.feed.entry;
                             while(+entries[0]['gs$cell'].row < 6 && entries.length) entries.splice(0,1);
                             
                             var lastRow = +entries[0]['gs$cell'].row;
@@ -266,7 +270,7 @@
                                 var text = newsitem[1] || "";
                                 var linkText = newsitem[2] || "";
                                 var linkURL = newsitem[3] || "";
-                                if(!linkURL.includes("http://") && !linkURL.includes("https://")) 
+                                if(linkURL.indexOf("http://") == -1 && linkURL.indexOf("https://") == -1) 
                                     linkURL = "http://" + linkURL;
 
                                 if(newsitem[4]) {
@@ -288,6 +292,9 @@
                                         '')
                                     '</div>';
                                 }
+                            }
+                            } catch(e) {
+                                newsitems.innerHTML = "<span style='color: #888'>Kan nieuws-items op dit moment niet ophalen.";
                             }
                         }
 
