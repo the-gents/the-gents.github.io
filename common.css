@@ -156,6 +156,7 @@ header > nav {
     -background: #000;
     background: transparent;
     -border-bottom: 5px solid #fff;
+    bottom: 5px solid #fff;
     border: none;
     -box-shadow: 0 3px 12px rgba(0,0,0,.25);
 }
@@ -392,7 +393,7 @@ header .language:hover::after {
 .news-message a {
     color: #D13232; 
     font-size: 12px;
-    display: block;
+    display: inline;
     padding-top: 10px;
 }
 
@@ -439,6 +440,7 @@ section h1 {
     font-size: 32px;
     display: inline-block;
     -border-bottom: 5px solid #D13232;
+    bottom: 5px solid #D13232;
     -background: #eee;
     padding: 10px 0;
 }
