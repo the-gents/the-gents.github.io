@@ -1,0 +1,219 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>The Gents</title>
+
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="author" content="">
+        <meta name="copyright" content="">
+        <meta name="robots" content="index,follow,noarchive" />
+        <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+        <link rel="manifest" href="favicon/site.webmanifest">
+        <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#d13232">
+        <meta name="msapplication-TileColor" content="#6bafed">
+        <meta name="theme-color" content="#D13232">
+
+        <link rel="stylesheet" href="common.css">
+        <link rel="stylesheet" href="sub.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <style>
+            .container {
+                margin-left: 100px; 
+                width: 400px;
+            }
+
+            .imgConductor {
+                width: 250px;
+                position: absolute;
+                right: 50px;
+                float: right; 
+                margin-top: 50px; 
+                margin-right: 100px;
+            }
+
+            @media screen and (max-width: 800px) {
+                .imgConductor {
+                    position: static;
+                    height: 250px;
+                    width: auto;
+                }
+
+                .container {
+                    margin: 0;
+                    width: 100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+                <img class="logo" src="logo.svg" alt="">
+            <nav>
+                <a href="index.html">Home</a>
+                <span onmouseover="aboutMenu.show()" onmouseleave="aboutMenu.hide()">Over
+                    <ul class="about-menu">
+                        <li><a href="biography.html">Biografie</a></li>
+                        <li><a href="conductor.html">De dirigent</a></li>
+                    </ul>
+                </span>
+                <a href="concerts.html">Concerten</a>
+                <a href="music.html">Muziek</a>
+                <a href="gallery.html">Galerij</a>
+                <a href="archief.html" selected>Archief</a>
+                <a href="friend.html" style="color: #D13232">Word vriend</a>
+                <button class="menu-btn" onclick="sideMenu.show()" hidden>
+                    <i class="material-icons">menu</i> <span>Menu</span>
+                </button>
+            </nav>
+
+            <a href="" class="language" data-msg="Switch to the english page"><img src="img/english.png"></a>
+        </header>
+
+        <div class="side-menu" hidden>
+            <i class="close material-icons" onclick="sideMenu.hide()" style="cursor: pointer">close</i>
+            <h1>Menu</h1>
+            <nav>
+                <a href="index.html" selected>Home</a>
+                <a href="biography.html">Biografie</a>
+                <a href="conductor.html">Over de dirigent</a>
+                <a href="concerts.html">Concerten</a>
+                <a href="music.html">Muziek</a>
+                <a href="gallery.html">Galerij</a>
+                <a href="archief.html">Archief</a>
+                <a href="friend.html" style="color: #D13232">Word vriend</a>
+            </nav>
+        </div>            
+
+        <script>
+            // Script for showing/hiding the menu for mobile devices
+            var sideMenu = document.getElementsByClassName('side-menu')[0];
+            var header = document.getElementsByTagName('header')[0];
+
+            onload = function() { sideMenu.hidden = false; }
+
+            sideMenu.show = function() {
+                //document.body.style.position = 'fixed';
+                sideMenu.style.transform = 'translateX(0px)';
+                setTimeout(function() { header.addEventListener('click', sideMenu.hide) }, 300);
+            }
+
+            sideMenu.hide = function() {
+                sideMenu.style.transform = 'translateX(-250px)';
+                document.body.style.transform = 'translateX(0px)';
+                document.body.style.position = 'static';
+                header.removeEventListener('click', sideMenu.hide);
+            }
+        </script>
+
+        <div class="content">
+            <section>
+                <div class="container">
+                    <h1 style="margin-bottom: 20px">Archief</h1>
+                    <br>
+                    <h1 style="font-size: 25px; margin: 0; font-style: italic; color: #D13232;">Denkend aan Holland</h1>
+                    <img style="width:600px;position:absolute;right:50px;float:right;margin-top:50px;margin-right:100px;" src="img/flyers/flyerdenkendaanholland.jpg">
+                    <p>In ‘Denkend aan Holland’ brengt vocaal ensemble The Gents een programma met louter muziek van Nederlandse bodem. In samenwerking met verschillende organisten en dichters brengen we in muziek en voordrachtskunst een ode aan de schoonheid van de Nederlandse taal. Speciaal voor het programma zijn nieuwe gedichten geschreven, is er nieuwe muziek gecomponeerd, en hebben we een aantal parels uit de recente Nederlandse muziekgeschiedenis opgedoken.
+                    </p>
+                    <p>Voor het titelstuk ‘Denkend aan Holland’ kreeg de Utrechtse componiste Monique Krüs opdracht een compositie te schrijven op het bekende gedicht ‘Herinnering aan Holland’ van Hendrik Marsman.
+                    </p>
+                    <p>Wouter van Belle schreef speciaal voor The Gents een lied met orgelbegeleiding op John Clare’s ‘To Mary’; een intrigerend gedicht dat zowel mystiek als sensueel kan worden opgevat.
+                    </p>
+                    <p>De Mysteria Gaudiosa van Hendrik Andriessen zijn speciaal voor dit project uitgegeven. Daarnaast klinkt ook de Sacramentslof van Albert de Klerk. Het zijn stukken die –ten onrechte! – niet vaak het podium haalden, zeker niet in mannenkoorbezetting.
+                    </p>
+                    <p>Van nog twee andere vooraanstaande dichters, Frederik van Eeden en Ida Gerhardt, zijn er toonzettingen te horen, van respectievelijk Herman Strategier en Hayo Boerema.
+                    </p>
+                    <p>Het programma wordt extra bijzonder doordat de dichters Anne Broeksma en Hanneke van Eijken bij een aantal liederen een inleiding geven en voordragen uit eigen werk. Speciaal voor dit programma schreven zij een eigen ode aan de Nederlandse taal.
+                    </p>
+                    <p>En ter afsluiting nog aandacht voor twee grote iconen van het Nederlandse luisterlied: Jules de Corte en Maarten van Roozendaal. 
+                    </p>
+                    <hr/>
+                    <p>Het programma Denkend aan Holland was te horen:</p>
+                    <table style="white-space:nowrap">
+                        <tr style="background-color: #D13232;"><td>Datum</td><td>Locatie</td><td>Organist</td></tr>
+                        <tr><td>1 juli 2019</td><td>Lebuinuskerk, Deventer</td><td>Kirstin Gramlich</td></tr>
+                        <tr><td>6 juli 2019</td><td>Zuiderkerk, Enkhuizen</td><td>Sander van den Houten</td></tr>
+                        <tr><td>15 september 2019</td><td>Orgelpark, Amsterdam</td><td>Wouter van Belle</td></tr>
+                        <tr><td>13 oktober 2019</td><td>Nicolaikerk, Appingedam</td><td>Vincent Hensen</td></tr>
+                        <tr><td>2 november 2019</td><td>Lutherse Kerk, Den Haag</td><td>Sander van den Houten</td></tr>
+                        <tr><td>17 november 2019</td><td>De Oude Jeroenskerk, Noordwijk</td><td>Jaco van Leeuwen</td></tr>
+                        <tr><td>22 november 2019</td><td>Broederkerk, Kampen</td><td>Sander van den Houten</td></tr>
+                        <tr><td>1 februari 2020</td><td>Petrus-basiliek, Boxtel</td><td>Tommy van Doorn</td></tr>
+                        <tr><td>8 februari 2020</td><td>Noorderkerk, Amsterdam</td><td>Jeroen Koopman</td></tr>
+                        <tr><td>14 februari 2020</td><td>Pieterskerk, Utrecht</td><td>Wouter van Belle</td></tr>
+                        </table>
+                </div>
+                <div style="clear: both"></div>
+            </section>
+            <section></section>
+        </div>
+        <footer>
+            <nav>
+                <a href="index.html">Home</a>
+                <span onmouseover="aboutMenu.show()" onmouseleave="aboutMenu.hide()">Over
+                    <ul class="about-menu">
+                        <li><a href="biography.html">Biografie</a></li>
+                        <li><a href="conductor.html">De dirigent</a></li>
+                    </ul>
+                </span>
+                <a href="concerts.html" selected>Concerten</a>
+                <a href="music.html">Muziek</a>
+                <a href="gallery.html">Galerij</a>
+                <button class="menu-btn" onclick="sideMenu.show()" hidden>
+                    <i class="material-icons">menu</i> <span>Menu</span>
+                </button>
+            </nav>
+
+            <br>
+
+            <div class="social">
+                <a href=""><img src="img/social/YouTube.svg"></a>
+                <a href=""><img src="img/social/Twitter.svg"></a>
+                <a href=""><img src="img/social/Facebook.svg"></a>
+            </div>
+
+            <p style="color: #fff">E-mail: info@thegents.nl</p>
+            <br>
+            <div class="footer-content">
+                <b>Dirigent</b>
+                <p>Annemiek van der Ven</p>
+                <b>Boekingen</b>
+                <p>Nanette Danckaarts</p>
+                <p>+31 6 46151696</p>
+                <br>
+            </div>
+            <div class="footer-content">
+                <b>Bestuur</b>
+                <p>Geert Meijering, voorzitter</p>
+                <p>Kor Brouwer, secretaris</p>
+                <p>Hans Donkers, penningmeester</p>
+                <b>CD verkoop</b>
+                <p>Hans Donkers</p>
+                <p>+31 6 49422637</p>
+            </div>
+            <div class="footer-content">
+                <b>Kamer van Koophandel</b>
+                <p>KvK in Utrecht: 30153201</p>
+                <p>Stichting The Gents</p>
+                <b>Postadres</b>
+                <p>Asserpark 25</p>
+                <p>6706 HA Wageningen</p>
+                <p>Nederland</p>
+            </div>
+
+            <br>
+
+            <div class="links">
+                <a href="friend.html" style="color: #D13232">Word vriend</a>
+                <a href="http://ggbrw.nl/wiki/doku.php?id=start&do=login">Inloggen</a>
+                <a href="anbi.html">ANBI-status</a>
+            </div>
+        </footer>
+    </body>
+</html>
