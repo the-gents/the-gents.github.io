@@ -23,6 +23,16 @@
         <link rel="stylesheet" href="common.css">
         <link rel="stylesheet" href="home.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script>
+            var carousel = [];
+            var carouselcounter = 0;
+            //
+            function fcarousel() {
+            carouselcounter += 1;
+            if (carouselcounter >= carousel.length) {carouselcounter = 0;}
+            return newsMessageFrontPage.querySelector('.content').innerHTML = carousel[carouselcounter] +'<br/><span style="display:block;float:right;">'+(carouselcounter+1)+'/'+carousel.length+'</span>';
+            }
+        </script>
     </head>
     <body>
         <header>
@@ -273,15 +283,15 @@
                                     linkURL = "http://" + linkURL;
 
                                 if(newsitem[4]) {
-                                    newsMessageFrontPage.querySelector('.content').innerHTML = 
+								    carousel.push(
                                     '<h2>' + title + '</h2>' +
                                     text +
                                     (linkText ? 
                                     '<br><br><a href="' + linkURL + '">' + linkText + '</a>' :
-                                    '');
-
+                                    ''));
+                                    newsMessageFrontPage.querySelector('.content').innerHTML = carousel[0];
                                     newsMessageFrontPage.show();
-                                } else {
+                                }  else {
                                     newsContainer.innerHTML +=
                                     '<div class="news-item">' +
                                         '<h2>' + title + '</h2>' +
@@ -298,6 +308,7 @@
                         }
 
                         xhr.send();
+						setInterval(function(){ fcarousel(); }, 3000);
                     //})();
                 </script>
             </section>
